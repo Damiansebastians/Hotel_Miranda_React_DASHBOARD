@@ -1,0 +1,15 @@
+
+-Bookings: 
+----------/bookings
+
+-Rooms:
+-------/rooms:
+--------------/id
+
+-Users:
+------/users:
+------------/user
+
+-Contact:
+--------/contact
+----------------/contact-us
