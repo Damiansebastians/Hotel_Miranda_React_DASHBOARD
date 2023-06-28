@@ -19,6 +19,7 @@ import { NavLink } from "react-router-dom";
     transition: all 0.5s ease 0s;
     `;
 
+// ----------- LOGO
     export const Logo = styled.div`
         height: 100px;
         display: flex;
@@ -50,6 +51,7 @@ import { NavLink } from "react-router-dom";
         }
     `;
 
+//--------------LIST
     export const LinkContainer = styled.ul`
     display: flex;
     flex-direction: column;
@@ -60,22 +62,39 @@ import { NavLink } from "react-router-dom";
     color: #799283;
     padding: 0;
     list-style: none;
+    width: 100%;
 
     li:hover {
+        font-weight: bold;
         scale: 1.3;
         cursor: pointer;
+        color: #E23428;
     }
 
     svg {
-        font-size: 22px;
+        font-size: 32px;
     }
 
     li {
         display: flex;
+        justify-content: center;
         flex-direction: row;
-        align-items: center;
+        align-items:center;
         gap: 1rem;
-    }
+        font-size: 22px;
+
+        div {
+            width: 45px; 
+            position: absolute;
+            left: 0px;
+            height: 100%;
+        }
+
+            &:hover div{
+                background-color: #ff0000;
+                border-radius: 20%;
+            }
+        }
     `;
 
     export const User = styled.div`
@@ -150,12 +169,13 @@ import { NavLink } from "react-router-dom";
     align-items: center;
     gap: 1rem;
 
-    &.active {
+    &.active,
+    &:hover {
         color: #E23428;
         font-weight: 800;
-        font-size: 24px;
-        border-left: 8px solid #E23428;
+        font-size: 28px;
     }
+
     `;
 
     export const Copyright = styled.div`
