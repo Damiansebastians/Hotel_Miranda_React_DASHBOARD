@@ -1,12 +1,10 @@
 import React from 'react';
-import NavBar from "../components/navBar/NavBar";
-import SideMenu from '../components/sideMenu/SideMenu';
+import MainNavContainer from '../components/MainNavContainer';
 
 const Bookings = () => {
     return (
         <>
-            <NavBar />
-            <SideMenu />
+            <MainNavContainer />
         </>
     )
 }

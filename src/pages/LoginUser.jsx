@@ -1,51 +1,42 @@
+import React from "react";
 import styled from "styled-components";
 import logo from "../assets/images/Logo_Hotel.png";
 import Button from "../components/Button";
-import Input from "../components/Input";
-import { useForm } from "../hook/useForm";
-import { useNavigate } from "react-router";
-import { useEffect } from "react";
+import {Input} from "../components/Input";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function LoginUser () {
 
   const navigate = useNavigate()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const { email, password, onInputChange, onResetForm} = useForm({
-    email: 'admin@admin.com',
-    password: 'admin',
-  })
-
-  const onLogin = (e) => {
+  const handlesLogin = (e) => {
     e.preventDefault();
+    console.log(email);
+    console.log(password);
 
-    localStorage.setItem('logged', true);
+    localStorage.setItem('logged', 'true');
     localStorage.setItem('email', email);
     localStorage.setItem('password', password);
 
-    navigate('/dashboard', {
-      replace: true,
-      state: {
-        logged: true,
-        email, password
-      }
-    });
-
-    onResetForm();
-
+    navigate("/dashboard");
   };
 
   return (
-    <form onSubmit={onLogin}>
+  
+    <form onSubmit={(e) => handlesLogin(e)}>
     <FormAccess >
         <TitleForm>Login for Access to Dashboard</TitleForm>
         <img src={logo} alt="Logo Hotel" />
         <InputForm>
-          <Input 
+          <Input
                   type='text' 
                   name='email'
                   id='email'
                   value={email}
-                  onChange={onInputChange}
+                  onChange={(e)=> setEmail(e.target.value)}
                   autoCompleted='off'
                   placeholder="Email" 
           />
@@ -55,14 +46,14 @@ function LoginUser () {
                   name='password'
                   id='password'
                   value={password}
-                  onChange={onInputChange}
+                  onChange={(e)=> setPassword(e.target.value)}
                   autoCompleted='off'
                   placeholder="Password"
                   />
           <label htmlFor="password"></label>
         </InputForm>
         <ButtonForm>
-          <Button content="Sign Up" />
+        <Button content="Sign Up" >Login</Button>
         </ButtonForm>
         <ForgotPasswordForm>Forgot Password?</ForgotPasswordForm>
     </FormAccess>

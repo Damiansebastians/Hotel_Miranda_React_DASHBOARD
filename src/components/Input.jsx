@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-export default function Input({ type, placeholder }) {
-  return <StyledInput type={type} placeholder={placeholder} />;
-}
-
-const StyledInput = styled.input`
+export const Input = styled.input`
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 32px 0 rgba(20, 122, 132, 0.37);
   margin-top:15px;
@@ -30,3 +26,4 @@ const StyledInput = styled.input`
       font-size: 16px;
     }
 `;
+

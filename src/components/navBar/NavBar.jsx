@@ -1,19 +1,19 @@
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 import { HiOutlineLogout, HiOutlineBell, HiOutlineMail } from "react-icons/hi";
 import { Nav, NavItemContainer } from "./NavBar.styled";
-import { useLocation, useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = (props) => {
-    const { state } = useLocation();
-    const navigate = useNavigate();
 
-    console.log(state);
+    const navigate = useNavigate()
 
-    const onLogout = () => {
-        navigate('/', {
-            replace: true,
-        });
-    };
+//----------------------------funcion para borrar los datos de LOCALSTORAGE-------------------
+        const handleLogOut = () => {
+                localStorage.removeItem('logged');
+                localStorage.removeItem('email'); 
+                localStorage.removeItem('password');
+                navigate("/")
+            }
 
     const onClickNavBarHandler = () => {
         if (props.open) {
@@ -21,7 +21,7 @@ const NavBar = (props) => {
         } else {
             props.showNavBar(true);
         }
-    };
+    }
 
     if (props.open) {
         return (
@@ -35,7 +35,7 @@ const NavBar = (props) => {
                         <HiOutlineBell />
                         <HiOutlineMail />
                         <HiOutlineLogout
-                            onClick={onLogout}
+                            onClick={handleLogOut}
                             data-testid="btn-logout"
                         />
                     </NavItemContainer>
@@ -54,7 +54,7 @@ const NavBar = (props) => {
                         <HiOutlineBell />
                         <HiOutlineMail />
                         <HiOutlineLogout
-                            onClick={onLogout}
+                            onClick={handleLogOut}
                             data-testid="btn-logout"
                         />
                     </NavItemContainer>

@@ -3,9 +3,10 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import LoginUser from "../pages/LoginUser";
 import Dashboard from "../pages/Dashboard";
 import Users from "../pages/Users";
-import Bookings from "../pages/Bookings";
 import Rooms from "../pages/Rooms";
 import Contact from "../pages/Contact";
+import Bookings from "../pages/Bookings";
+
 import { PrivateRoute } from "./PrivateRoute";
 
 export const AppRouter = () => {
@@ -19,9 +20,9 @@ export const AppRouter = () => {
                 <Route path="/bookings" element={<Bookings />} />
                 <Route path="/rooms:/id" element={<Rooms />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={ <Navigate to="/dashboard" />} />
 
             </Route>
-            <Route path="*" element={ <Navigate to="/" />} />
         </Routes>
     </>;
 };

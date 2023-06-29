@@ -1,11 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-function Button({ content }) {
-  return <StyledButton>{content}</StyledButton>;
-}
-
-const StyledButton = styled.button`
+const Button = styled.button`
   background: linear-gradient(to right, #0a3326 0%, #14b684 79%);
   text-transform: uppercase;
   letter-spacing: 2px;

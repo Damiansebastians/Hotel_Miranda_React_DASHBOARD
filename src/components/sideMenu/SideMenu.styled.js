@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
     top: 0px;
     left: 0px;
     height: 100%;
-    width: 350px;
+    width: ${(props) => props.display};
     display: flex;
     flex-direction: column;
     gap: 30px;

@@ -1,13 +1,6 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Bookings from './pages/Bookings';
-import Rooms from './pages/Rooms';
-import Users from './pages/Users';
-import Contact from './pages/Contact';
-import Dashboard from './pages/Dashboard';
-import LoginUser from './pages/LoginUser';
-import "./App.css";
+import { BrowserRouter } from 'react-router-dom';
 import { AppRouter } from './router/AppRouter';
-
+import "./App.css";
 
 function App() {
   return (
