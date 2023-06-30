@@ -1,11 +1,12 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
+import MainNavContainer from '../components/MainNavContainer';
+import { MainDIvContainer } from '../styles/DashboardStyles';
 
 const Contact = () => {
     return (
         <>  
-        <NavBar />
-            <p>Contact</p>
+            <MainNavContainer />
+            <MainDIvContainer />
         </>
     )
 }

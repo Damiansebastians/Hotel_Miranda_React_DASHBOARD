@@ -80,10 +80,9 @@ const TextLogo = styled.p`
     position: relative;
     width: 70px;
     height: 70px;
-    background-color: #000000;
     border-radius: 8px;
     margin: 0 auto;
-    margin-top: 60px;
+    box-shadow: 0px 6px 6px #00000022;
 
         & img{
             width: 100%;
@@ -97,6 +96,8 @@ const TextLogo = styled.p`
     box-shadow: 0px 20px 30px #00000035;
     border-radius: 18px;
     margin: 0 auto;
+    margin-top: 60px;
+    padding-top: 30px;
 //---------------------------------------------
     `;
     const UserName = styled.p`

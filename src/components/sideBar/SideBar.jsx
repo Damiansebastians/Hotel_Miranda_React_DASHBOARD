@@ -6,6 +6,7 @@ import { FaUserAlt } from "react-icons/fa";
 import { AiFillContacts } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/Logo_Hotel.png";
+import Perfil from "../../assets/images/perfil.jpg";
 import {
     LateralMenu,
     ListItems,
@@ -30,8 +31,8 @@ import {
                 <Logo>
                     <img src={logo} alt="Logo Hotel" />
                     <div>
-                    <TitleLogo>travl</TitleLogo>
-                    <TextLogo>Hotel Admin Dashboard</TextLogo>
+                        <TitleLogo>travl</TitleLogo>
+                        <TextLogo>Hotel Admin Dashboard</TextLogo>
                     </div>
                 </Logo>
             <ul>
@@ -91,7 +92,7 @@ import {
 
             <CardAvatar>
                 <AvatarImage>
-                <img src="./assets/images/avatar.png" alt="Avatar" />
+                <img src={Perfil} alt="Avatar" />
                 </AvatarImage>
                 <UserName>ADMIN</UserName>
                 <UserEmail>admin@admin.com</UserEmail>

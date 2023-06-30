@@ -1,18 +1,20 @@
 import styled from "styled-components";
 
     const MainDIvContainer = styled.div`
-    ${"" /* width:75%; */}
+    margin-left: 380px;
     display:flex;
-    margin-left: ${(props) => props.margin};
     transition: margin-left 0.5s;
+    background-color: #f8f8f8;
+    padding: 50px;
     `;
+//----------------------------------------
     const ChildDivContainer = styled.div`
     display: flex;
     width: 100%;
     height: 125px;
     padding-right: 35px;
     margin-right: 25px;
-    margin-top: 50px;
+    margin-bottom: 40px;
     background: #ffffff;
     box-shadow: 0px 4px 4px #00000005;
     border-radius: 12px;
@@ -30,7 +32,7 @@ import styled from "styled-components";
     margin: 0px;
     padding-top: 29px;
     text-align: left;
-    font: normal normal 600 30px Poppins;
+    font: normal normal 600 30px 'Poppins';
     color: #393939;
     `;
     const DashboardSpan = styled.p`

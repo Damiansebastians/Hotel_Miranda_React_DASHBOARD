@@ -14,14 +14,12 @@ export const AppRouter = () => {
         <Routes>
             <Route exact path="/" element={<LoginUser />} />
             <Route element={ <PrivateRoute /> } >
-
                 <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/user" element={<Users />} />
+                <Route path="/users" element={<Users />} />
                 <Route path="/bookings" element={<Bookings />} />
                 <Route path="/rooms:/id" element={<Rooms />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={ <Navigate to="/dashboard" />} />
-
             </Route>
         </Routes>
     </>;

@@ -70,7 +70,7 @@ const FormAccess = styled.div`
   max-width: 50vh;
   width: 80%;
   height: 80vh;
-  background: whitesmoke;
+  background: #ffffff;
   box-shadow: 0px 8px 32px 0px #000000;
   border-radius: 10px;
   color: #ffffff;
