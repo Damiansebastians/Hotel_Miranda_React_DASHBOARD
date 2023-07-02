@@ -59,9 +59,7 @@ import {
     const Dashboard = ()=> {
     return (
         <>
-        <MainNavContainer />
         
-            <MainDIvContainer>
                 <ChildDivContainer>
                 <ChildDivColor bgcolor={"#FFEDEC"}>
                     <IconContainer>
@@ -110,7 +108,6 @@ import {
                 </DashboardParagraph>
                 </ChildDivContainer>
 
-            </MainDIvContainer>
             {/* //provisorio */}
             <div style={{ backgroundColor: '#f8f8f8', marginLeft: '80px', paddingBottom:'50px ' }}>
                 <img src={Reservation} alt="" />

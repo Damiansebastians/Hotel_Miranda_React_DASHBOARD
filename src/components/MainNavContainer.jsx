@@ -2,13 +2,13 @@ import styled from "styled-components";
 import SideBar from "./sideBar/SideBar";
 import NavBar from "./NavBar";
 
-export default function MainNavContainer() {
+export default function MainNavContainer({ openNav, size }) {
 
     return (
         <>
             <MainContainer>
-                <NavBar />
-                <SideBar />
+                <NavBar openNav={openNav} size={size} />
+                <SideBar size={size} />
             </MainContainer>
         </>
     );

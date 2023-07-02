@@ -26,6 +26,7 @@ import {
     } from "./SideBarStyled.jsx";
 
     const SideBar = () => {
+
     return (
         <LateralMenu>
                 <Logo>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 //-------------------------------------
-    const Logo = styled.div`
+const Logo = styled.div`
         height: 100px;
         display: flex;
         align-items: center;
@@ -34,15 +34,15 @@ const TextLogo = styled.p`
 `;
 //----------------------------------
     const LateralMenu = styled.div`
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    width: 380px;
+    max-width: 380px;
     position: fixed;
-    top: 0;
-    left: 0;
     background: #ffffff;
     box-shadow: 13px 3px 40px #00000005;
-    overflow-x: hidden;
     transition: 0.5s;
+    align-items: center;
 `;
 //----------------------------------------
     const ListItems = styled.li`
@@ -87,6 +87,7 @@ const TextLogo = styled.p`
         & img{
             width: 100%;
             border-radius: 20px;
+
         }
     `;
 //---------------------------------------------
