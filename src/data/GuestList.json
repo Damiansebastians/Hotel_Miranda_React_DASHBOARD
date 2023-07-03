@@ -1,223 +1,123 @@
 [
-        {
+    {
         "id": 1,
         "img": "guest1.jpg",
+        "number": "#000123456",
         "Guest": "John Doe",
-        "Order_Date": "2023-06-01",
-        "Check_in": "2023-06-10",
-        "Check_out": "2023-06-15",
-        "Special_Request": "No special requests",
-        "Room_type": "Standard",
+        "Order_Date": "Oct 30th 2020 09:21 AM",
+        "Check_in": "Nov 4th, 2020",
+        "Check_out": "Nov 9th, 2020",
+        "Special_Request": "View Notes",
+        "Room_type": "Deluxe A - 02",
         "Status": "Booked"
-        },
-        {
+    },
+    {
         "id": 2,
         "img": "guest2.jpg",
+        "number": "#000987654",
         "Guest": "Jane Smith",
-        "Order_Date": "2023-06-02",
-        "Check_in": "2023-06-12",
-        "Check_out": "2023-06-18",
-        "Special_Request": "Extra towels",
-        "Room_type": "Deluxe",
-        "Status": "Refund"
-        },
-        {
+        "Order_Date": "Nov 1st 2020 11:35 AM",
+        "Check_in": "Jul 1st, 2023",
+        "Check_out": "Jul 5th, 2023",
+        "Special_Request": "View Notes",
+        "Room_type": "Deluxe A - 03",
+        "Status": "Pending"
+    },
+    {
         "id": 3,
         "img": "guest3.jpg",
+        "number": "#000246813",
         "Guest": "David Johnson",
-        "Order_Date": "2023-06-03",
-        "Check_in": "2023-06-08",
-        "Check_out": "2023-06-13",
-        "Special_Request": "No special requests",
-        "Room_type": "Standard",
-        "Status": "Booked"
-        },
-        {
+        "Order_Date": "Nov 5th 2020 03:45 PM",
+        "Check_in": "Aug 15th, 2023",
+        "Check_out": "Aug 20th, 2023",
+        "Special_Request": "View Notes",
+        "Room_type": "Deluxe A - 04",
+        "Status": "Canceled"
+    },
+    {
         "id": 4,
         "img": "guest4.jpg",
-        "Guest": "Emily Brown",
-        "Order_Date": "2023-06-04",
-        "Check_in": "2023-06-11",
-        "Check_out": "2023-06-17",
-        "Special_Request": "Early check-in",
-        "Room_type": "Deluxe",
-        "Status": "Booked"
-        },
-        {
+        "number": "#000555555",
+        "Guest": "Emily Williams",
+        "Order_Date": "Nov 10th 2020 08:10 AM",
+        "Check_in": "Sep 5th, 2023",
+        "Check_out": "Sep 10th, 2023",
+        "Special_Request": "View Notes",
+        "Room_type": "Deluxe B - 224",
+        "Status": "Refund"
+    },
+    {
         "id": 5,
         "img": "guest5.jpg",
-        "Guest": "Michael Davis",
-        "Order_Date": "2023-06-05",
-        "Check_in": "2023-06-14",
-        "Check_out": "2023-06-20",
-        "Special_Request": "No special requests",
-        "Room_type": "Standard",
+        "number": "#000777888",
+        "Guest": "Michael Brown",
+        "Order_Date": "Nov 15th 2020 02:30 PM",
+        "Check_in": "Oct 20th, 2023",
+        "Check_out": "Oct 25th, 2023",
+        "Special_Request": "View Notes",
+        "Room_type": "Deluxe C - 412",
         "Status": "Booked"
-        },
-        {
+    },
+    {
         "id": 6,
         "img": "guest6.jpg",
-        "Guest": "Olivia Wilson",
-        "Order_Date": "2023-06-06",
-        "Check_in": "2023-06-09",
-        "Check_out": "2023-06-16",
-        "Special_Request": "Late check-out",
-        "Room_type": "Deluxe",
-        "Status": "Booked"
-        },
-        {
+        "number": "#000999000",
+        "Guest": "Olivia Davis",
+        "Order_Date": "Nov 20th 2020 06:55 AM",
+        "Check_in": "Nov 15th, 2023",
+        "Check_out": "Nov 20th, 2023",
+        "Special_Request": "View Notes",
+        "Room_type": "Deluxe A - 02",
+        "Status": "Pending"
+    },
+    {
         "id": 7,
         "img": "guest7.jpg",
-        "Guest": "James Taylor",
-        "Order_Date": "2023-06-07",
-        "Check_in": "2023-06-15",
-        "Check_out": "2023-06-20",
-        "Special_Request": "No special requests",
-        "Room_type": "Standard",
-        "Status": "Booked"
-        },
-        {
+        "number": "#000111222",
+        "Guest": "William Wilson",
+        "Order_Date": "Nov 25th 2020 12:40 PM",
+        "Check_in": "Dec 10th, 2023",
+        "Check_out": "Dec 15th, 2023",
+        "Special_Request": "View Notes",
+        "Room_type": "Deluxe D - 219",
+        "Status": "Canceled"
+    },
+    {
         "id": 8,
         "img": "guest8.jpg",
-        "Guest": "Sophia Clark",
-        "Order_Date": "2023-06-08",
-        "Check_in": "2023-06-17",
-        "Check_out": "2023-06-23",
-        "Special_Request": "Extra pillows",
-        "Room_type": "Deluxe",
-        "Status": "Refund"
-        },
-        {
+        "number": "#000444333",
+        "Guest": "Sophia Johnson",
+        "Order_Date": "Nov 30th 2020 09:15 AM",
+        "Check_in": "Jan 5th, 2024",
+        "Check_out": "Jan 10th, 2024",
+        "Special_Request": "View Notes",
+        "Room_type": "Deluxe D - 972",
+        "Status": "Booked"
+    },
+    {
         "id": 9,
         "img": "guest9.jpg",
-        "Guest": "Benjamin Martinez",
-        "Order_Date": "2023-06-09",
-        "Check_in": "2023-06-12",
-        "Check_out": "2023-06-18",
-        "Special_Request": "No special requests",
-        "Room_type": "Standard",
-        "Status": "Booked"
-        },
-        {
+        "number": "#000678901",
+        "Guest": "James Smith",
+        "Order_Date": "Dec 3rd 2020 03:25 PM",
+        "Check_in": "Feb 20th, 2024",
+        "Check_out": "Feb 25th, 2024",
+        "Special_Request": "View Notes",
+        "Room_type": "Deluxe A - 102",
+        "Status": "Refund"
+    },
+    {
         "id": 10,
         "img": "guest10.jpg",
-        "Guest": "Emma Anderson",
-        "Order_Date": "2023-06-10",
-        "Check_in": "2023-06-19",
-        "Check_out": "2023-06-25",
-        "Special_Request": "Late check-in",
-        "Room_type": "Deluxe",
+        "number": "#000543210",
+        "Guest": "Ava Taylor",
+        "Order_Date": "Dec 8th 2020 08:50 AM",
+        "Check_in": "Mar 15th, 2024",
+        "Check_out": "Mar 20th, 2024",
+        "Special_Request": "View Notes",
+        "Room_type": "Deluxe D - 117",
         "Status": "Booked"
-        },
-        {
-        "id": 11,
-        "img": "guest11.jpg",
-        "Guest": "Liam White",
-        "Order_Date": "2023-06-11",
-        "Check_in": "2023-06-14",
-        "Check_out": "2023-06-20",
-        "Special_Request": "No special requests",
-        "Room_type": "Standard",
-        "Status": "Booked"
-        },
-        {
-        "id": 12,
-        "img": "guest12.jpg",
-        "Guest": "Ava Lee",
-        "Order_Date": "2023-06-12",
-        "Check_in": "2023-06-21",
-        "Check_out": "2023-06-27",
-        "Special_Request": "Extra towels",
-        "Room_type": "Deluxe",
-        "Status": "Booked"
-        },
-        {
-        "id": 13,
-        "img": "guest13.jpg",
-        "Guest": "Noah Turner",
-        "Order_Date": "2023-06-13",
-        "Check_in": "2023-06-16",
-        "Check_out": "2023-06-22",
-        "Special_Request": "No special requests",
-        "Room_type": "Standard",
-        "Status": "Booked"
-        },
-        {
-        "id": 14,
-        "img": "guest14.jpg",
-        "Guest": "Isabella Walker",
-        "Order_Date": "2023-06-14",
-        "Check_in": "2023-06-23",
-        "Check_out": "2023-06-29",
-        "Special_Request": "Late check-out",
-        "Room_type": "Deluxe",
-        "Status": "Booked"
-        },
-        {
-        "id": 15,
-        "img": "guest15.jpg",
-        "Guest": "Mason Lewis",
-        "Order_Date": "2023-06-15",
-        "Check_in": "2023-06-20",
-        "Check_out": "2023-06-26",
-        "Special_Request": "No special requests",
-        "Room_type": "Standard",
-        "Status": "Booked"
-        },
-        {
-        "id": 16,
-        "img": "guest16.jpg",
-        "Guest": "Mia Hall",
-        "Order_Date": "2023-06-16",
-        "Check_in": "2023-06-25",
-        "Check_out": "2023-06-30",
-        "Special_Request": "Extra pillows",
-        "Room_type": "Deluxe",
-        "Status": "Refund"
-        },
-        {
-        "id": 17,
-        "img": "guest17.jpg",
-        "Guest": "Ethan Hill",
-        "Order_Date": "2023-06-17",
-        "Check_in": "2023-06-22",
-        "Check_out": "2023-06-28",
-        "Special_Request": "No special requests",
-        "Room_type": "Standard",
-        "Status": "Booked"
-        },
-        {
-        "id": 18,
-        "img": "guest18.jpg",
-        "Guest": "Abigail Young",
-        "Order_Date": "2023-06-18",
-        "Check_in": "2023-06-27",
-        "Check_out": "2023-07-03",
-        "Special_Request": "Early check-in",
-        "Room_type": "Deluxe",
-        "Status": "Booked"
-        },
-        {
-        "id": 19,
-        "img": "guest19.jpg",
-        "Guest": "Alexander Scott",
-        "Order_Date": "2023-06-19",
-        "Check_in": "2023-06-24",
-        "Check_out": "2023-06-30",
-        "Special_Request": "No special requests",
-        "Room_type": "Standard",
-        "Status": "Booked"
-        },
-        {
-        "id": 20,
-        "img": "guest20.jpg",
-        "Guest": "Sofia Martinez",
-        "Order_Date": "2023-06-20",
-        "Check_in": "2023-06-29",
-        "Check_out": "2023-07-05",
-        "Special_Request": "Extra towels",
-        "Room_type": "Deluxe",
-        "Status": "Booked"
-        }
-    ]
-    
+    }
+]
+

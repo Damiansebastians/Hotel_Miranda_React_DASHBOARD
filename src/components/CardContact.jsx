@@ -5,17 +5,23 @@ import { FcOk } from "react-icons/fc";
 import { GiCancel } from "react-icons/gi";
 
     const MainCard = styled.div`
-    margin-left: 380px;
-    width: 80%;
+    width: 100%;
     border: 1px solid #ebebeb;
     border-radius: 20px;
+    transition: transform 0.3s ease;
+
+    &:hover{
+        transform: scale(1.1);
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+    }
     `;
     const ParagraphContact = styled.div`
     width: 80%;
-    margin: 30px;
+    padding: 30px;
     text-align: left;
     font: normal normal normal 16px/28px 'Poppins';
     color: #4e4e4e;
+
     `;
     const ContactContainer = styled.div`
     display: flex;

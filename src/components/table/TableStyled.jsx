@@ -3,50 +3,55 @@ import styled from "styled-components";
     const TableContainer = styled.div`
     margin: 0 auto;
     padding-top: 56px;
-    background-color: #f8f8f8;
     display: flex;
     flex-direction: column;
-    margin-left: 350px;
     padding-bottom: 150px;
     transition: margin-left 0.5s;
     `;
     const Table = styled.table`
     border-collapse: collapse;
-    background: #ffffff 0% 0% no-repeat padding-box;
+    background: #ffffff;
     border-radius: 20px;
+    text-align: left;
     `;
 
     const TableHead = styled.td`
     padding: 15px;
-    color: var(--unnamed-color-393939);
-    font: normal normal 600 18px/27px Poppins;
+    color: #393939;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    
     `;
     const TableRow = styled.tr`
-    opacity: 1;
     border-top: 1px solid rgb(212, 212, 212);
-    :hover {
+    /* :hover {
         box-shadow: 0px 4px 30px #00000014;
-    }
+    } */
     `;
 
     const TableData = styled.td`
-    padding: 25px;
+    padding: 15px;
     img {
-        width: 88px;
-        height: 88px;
-        border-radius: 12px;
+        width: 45px;
+        height: 45px;
+        border-radius: 8px;
     }
     `;
+//---------------------------------------------
     const RowHeader = styled.tr`
     border-bottom: 1px solid #ccc;
+
     `;
     const Paragraph = styled.p`
     max-width: 300px;
-    font-weight: ${(props) => props.weight};
+    font-size: 16px;
+    line-height:25px;
+    font-family: 'Poppins';
+    font-weight: bold;
     color: ${(props) => props.color || "#393939"};
-    font-family: var(--font-poppins);
     `;
-
+//---------------------------------------------
     const Span = styled.span`
     color: ${(props) => props.color};
     padding-bottom: 10px;
@@ -61,17 +66,19 @@ import styled from "styled-components";
     text-align: initial;
     margin-right: 80px;
     `;
-
-    /** Button Header **/
+//---------------------------------------------
     const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     `;
+//---------------------------------------------
     const ListTitleTopContainer = styled.div`
     display: flex;
     width: 60%;
     margin-bottom: 50px;
     `;
+//---------------------------------------------
     const ListTitleTop = styled.p`
     color: rgb(110, 110, 110);
     font-weight: 500;
@@ -84,17 +91,65 @@ import styled from "styled-components";
         border-bottom: 2px solid #135846;
     }
     `;
+//---------------------------------------------
+    const ButtonList = styled.button`
+    font-size: 19px;
+    font-family: 'Poppins';
+    text-align: center;
+    letter-spacing: 0px;
+    width: 110px;
+    height: 50px;
+    color: ${(props) => props.color};
+    background-color: ${(props) => props.bgcolor};
+    padding: 13px ;
+    border: none;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 
+    &:hover{
+        transform: scale(1.1);
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+    }
+`;
+//---------------------------------------------
+const ButtonRequest = styled.button`
+    font-size: 19px;
+    font-family: 'Poppins';
+    text-align: center;
+    letter-spacing: 0px;
+    width: 160px;
+    height: 50px;
+    color: ${(props) => props.color};
+    background-color: ${(props) => props.bgcolor};
+    border: ${(props) => props.border};
+    padding: 13px ;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover{
+        transform: scale(1.1);
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);}
+`;
+//---------------------------------------------
     const NewRoomButtonContainer = styled.div`
     display: flex;
     `;
+//---------------------------------------------
     const NewRoomButton = styled.button`
+    width: 427px;
+    height: 49px;
     border-radius: 12px;
     margin-left: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 25px;
     background-color: ${(props) => props.bgColor};
-    height: 49px;
     color: ${(props) => props.color};
-    font-family: Poppins;
+    font-family: 'Poppins';
     padding: 13px 23px;
     border: none;
     `;
@@ -113,6 +168,8 @@ import styled from "styled-components";
     HeaderContainer,
     ListTitleTopContainer,
     ListTitleTop,
+    ButtonList,
+    ButtonRequest,
     NewRoomButtonContainer,
     NewRoomButton,
 };

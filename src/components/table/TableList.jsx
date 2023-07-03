@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { GrCheckbox } from "react-icons/gr"
+import { RiMoreLine } from "react-icons/ri"
 import Data from "../../data/GuestList.json";
 
 import {
@@ -16,11 +18,11 @@ import {
     HeaderContainer,
     ListTitleTopContainer,
     ListTitleTop,
+    ButtonList,
+    ButtonRequest,
     NewRoomButtonContainer,
     NewRoomButton,
     } from "./TableStyled.jsx"
-
-import Button from "../Button";
 
     const TableList = () => {
 
@@ -36,16 +38,27 @@ import Button from "../Button";
                 <ListTitleTop>Refund</ListTitleTop>
                 </ListTitleTopContainer>
                 <NewRoomButtonContainer>
-                <NewRoomButton bgColor={"#135846"} color={"white"}>
-                    1 November - 30 November 2020
+                <NewRoomButton 
+                    bgColor={"#135846"} 
+                    color={"#ffffff"}>
+                    1 November 2020 - 30 November 2020
                 </NewRoomButton>
-                <NewRoomButton color={"#135846"}>Newest</NewRoomButton>
+                <NewRoomButton 
+                    color={"#135846"}
+                    style={{
+                            width: '129px'}}>
+                    Newest
+                </NewRoomButton>
                 </NewRoomButtonContainer>
             </HeaderContainer>
+
             <Table>
                 <thead>
                 <RowHeader>
-                    <TableHead>Guest</TableHead>
+                    <TableHead>
+                    <GrCheckbox style={{ width: '24px', height: '24px', marginRight:'25px'}}/>
+                    Guest
+                    </TableHead>
                     <TableHead>Order Date</TableHead>
                     <TableHead>Check In</TableHead>
                     <TableHead>Ckeck out</TableHead>
@@ -60,7 +73,7 @@ import Button from "../Button";
                     <ImgContainer>
                         <TableData
                         width={"100px"}
-                        height={"100px"}
+                        height={"50px"}
                         padding={"25px"}
                         >
                         <Link to={`/bookings/${guest.id}`}>
@@ -69,7 +82,7 @@ import Button from "../Button";
                         </TableData>
                         <ParagraphContainer>
                         <Paragraph>{guest.Guest}</Paragraph>
-                        <Span color={"#799283"}>#000123456</Span>
+                        <Span color={"#799283"}>{guest.number}</Span>
                         </ParagraphContainer>
                     </ImgContainer>
                     <TableData>
@@ -84,26 +97,60 @@ import Button from "../Button";
                         <Span>6:12 PM</Span>
                     </TableData>
                     <TableData>
-                        <Button
-                        color={guest.Status === "Refund" ? "#212121" : "#799283"}
-                        bgcolor={guest.Status === "Refund" ? "#EEF9F2" : "white"}
-                        border={guest.Status === "Booked" ? "1px solid " : "none"}
+                        <ButtonRequest
+                        color={
+                            guest.Status === "Booked"
+                            ? "#799283" : "#212121"}
+                        bgcolor={
+                            guest.Status === "Booked"
+                            ? "#ffffff" : "#EEF9F2"}
+                        border={
+                            guest.Status === "Booked" 
+                            ? "1px solid #799283 " : "none"}
                         >
                         {guest.Special_Request}
-                        </Button>
+                        </ButtonRequest>
                     </TableData>
                     <TableData>
                         <Paragraph>{guest.Room_type}</Paragraph>
                     </TableData>
                     <TableData>
-                        <Button
-                        color={guest.Status === "Refund" ? "red" : "#5AD07A"}
-                        bgcolor={
-                            guest.Status === "Refund" ? "#FFEDEC" : "#E8FFEE"
-                        }
+                        <ButtonList
+                        color={
+                                guest.Status === "Refund"
+                                ? "#E23428"
+                                : guest.Status === "Booked"
+                                ? "#5AD07A"
+                                : guest.Status === "Pending"
+                                ? "#6D6D6D"
+                                : guest.Status === "Canceled"
+                                ? "#BEBEBE"
+                                : null
+                            }
+                            bgcolor={
+                                guest.Status === "Refund"
+                                ? "#FFEDEC"
+                                : guest.Status === "Booked"
+                                ? "#E8FFEE"
+                                : guest.Status === "Pending"
+                                ? "#E2E2E2"
+                                : guest.Status === "Canceled"
+                                ? "#575757"
+                                : null
+                            }
                         >
                         {guest.Status}
-                        </Button>
+                        </ButtonList>
+                    </TableData>
+                    <TableData>
+                    <RiMoreLine
+                        style={{
+                            width: '24px',
+                            height: '24px',
+                            transform: 'rotate(90deg)',
+                            fontWeight: 'bold',
+                            cursor: 'pointer',
+                        }} />
                     </TableData>
                     </TableRow>
                 ))}

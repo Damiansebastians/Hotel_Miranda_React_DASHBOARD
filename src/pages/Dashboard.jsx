@@ -1,14 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import MainNavContainer from "../components/MainNavContainer";
-import { BiBed } from "react-icons/bi";
+import { BiBed, BiRightArrowAlt } from "react-icons/bi";
 import { TbCalendarMinus } from "react-icons/tb";
 import { RiLoginBoxLine } from "react-icons/ri";
 import { SlLogout } from "react-icons/sl";
 import CardContact from "../components/CardContact";
 import Reservation from "../assets/images/Reservation.png";
 import {
-    MainDIvContainer,
     ChildDivContainer,
     ChildDivColor,
     DashboardParagraph,
@@ -18,16 +16,21 @@ import {
 
 //----------------------------------------------------------
     const ContactCardsContainer = styled.div`
-    width: 80%;
+    position: relative;
+    width: 100%;
     transition: margin-left 0.5s;
     background-color: #ffffff;
     box-shadow: 0px 4px 4px #00000005;
     border-radius: 20px;
-    padding: 0px 50px;
+    padding: 0px 72px 70px 30px;
     `;
+
     const CardsContainer = styled.div`
     display: flex;
+    flex-direction: row;
+    gap: 40px;
     `;
+
     const Title = styled.h2`
     width: 100%;
     padding-bottom: 30px;
@@ -37,22 +40,23 @@ import {
     color: #393939;
     `;
     const ButtonCard = styled.button`
-    width: 56px;
-    height: 56px;
-    background-color: green;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    `;
-    
-    const ArrowIcon = styled.div`
-        width: 12px;
-        height: 12px;
-        border-top: 2px solid white;
-        border-right: 2px solid white;
-        transform: rotate(45deg);
+        position: absolute;
+        top: 55%;
+        right: -25px;
+        transform: translateY(-50%);
+        width: 56px;
+        height: 56px;
+        background-color: #135846;
+        border: none;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 12px;
+
+        &:hover{
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
     `;
 
 //-------------------------------------------------
@@ -123,7 +127,9 @@ import {
             <CardContact />
             </CardsContainer>
                 <ButtonCard>
-                    <ArrowIcon />
+                    <BiRightArrowAlt 
+                    fontSize={"xx-large"} 
+                    color={"#ffffff"} />
                 </ButtonCard>
         </ContactCardsContainer>
         </>
