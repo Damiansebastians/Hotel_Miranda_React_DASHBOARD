@@ -43,6 +43,7 @@ const TextLogo = styled.p`
     box-shadow: 13px 3px 40px #00000005;
     transition: 0.5s;
     align-items: center;
+    padding-right: 20px;
 `;
 //----------------------------------------
     const ListItems = styled.li`

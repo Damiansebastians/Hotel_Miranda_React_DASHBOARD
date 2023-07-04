@@ -10,25 +10,27 @@ import { styled } from "styled-components";
         justify-content: space-between;
         background: #ffffff;
         z-index: 99;
+        padding-left:20px;
     `;
 
     export const NavItemContainer = styled.div`
+        padding-right: 18%;
         font-size: 24px;
         color: #262626;
         display: flex;
         flex-direction: row;
         font-family: "Poppins";
         align-items: center;
-        gap: 2.5rem;
-        padding: 0 2%;
+        gap: 4.5rem;
+        justify-content: flex-end;
 
-    svg:hover {
-        scale: (1.3);
-        transition: transform 0.3s ease;
-        cursor: pointer;
-    }
+        svg:hover {
+            transform: scale(1.5);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            }
 
-    h2 {
-        font-size: 24px;
-    }
+        h2 {
+            font-size: 28px;
+        }
 `;

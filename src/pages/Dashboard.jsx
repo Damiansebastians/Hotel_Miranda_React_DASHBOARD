@@ -5,19 +5,19 @@ import { TbCalendarMinus } from "react-icons/tb";
 import { RiLoginBoxLine } from "react-icons/ri";
 import { SlLogout } from "react-icons/sl";
 import CardContact from "../components/CardContact";
-import Reservation from "../assets/images/Reservation.png";
 import {
     ChildDivContainer,
     ChildDivColor,
     DashboardParagraph,
     DashboardSpan,
     IconContainer,
+    BoxContainer,
     } from "../styles/DashboardStyles";
 
 //----------------------------------------------------------
     const ContactCardsContainer = styled.div`
     position: relative;
-    width: 100%;
+    width: 98%;
     transition: margin-left 0.5s;
     background-color: #ffffff;
     box-shadow: 0px 4px 4px #00000005;
@@ -63,7 +63,7 @@ import {
     const Dashboard = ()=> {
     return (
         <>
-        
+            <BoxContainer>
                 <ChildDivContainer>
                 <ChildDivColor bgcolor={"#FFEDEC"}>
                     <IconContainer>
@@ -111,11 +111,7 @@ import {
                     <DashboardSpan>Check out</DashboardSpan>
                 </DashboardParagraph>
                 </ChildDivContainer>
-
-            {/* //provisorio */}
-            <div style={{ backgroundColor: '#f8f8f8', marginLeft: '80px', paddingBottom:'50px ' }}>
-                <img src={Reservation} alt="" />
-            </div>
+                </BoxContainer>
 
 {/* //-------CARDS REVIEWS--------------- */}
 

@@ -17,6 +17,7 @@ export const Layout = (props) => {
     const LeftMenu = styled.div`
     display: inline-block;
     width: 300px;
+    background-color: #ffffff;
     ${props => !props.open && css` display: none;`}
   `;
 

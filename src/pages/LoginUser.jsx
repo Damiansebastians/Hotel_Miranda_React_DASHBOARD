@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import logo from "../assets/images/Logo_Hotel.png";
 import Button from "../components/Button";
 import {Input} from "../components/Input";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 function LoginUser () {
 
+  const {email, setEmail, password, setPassword} = useContext(AuthContext)
   const navigate = useNavigate()
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   const handlesLogin = (e) => {
     e.preventDefault();

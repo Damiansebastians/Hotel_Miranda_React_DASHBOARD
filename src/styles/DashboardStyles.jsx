@@ -7,6 +7,13 @@ import styled from "styled-components";
     background-color: #f8f8f8;
     padding: 50px;
     `;
+//---------------------------------------
+    const BoxContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    `;
 //----------------------------------------
     const ChildDivContainer = styled.div`
     display: flex;
@@ -18,6 +25,12 @@ import styled from "styled-components";
     background: #ffffff;
     box-shadow: 0px 4px 4px #00000005;
     border-radius: 12px;
+    transition: transform 0.3s ease;
+
+    &:hover{
+        transform: scale(1.1);
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+    }
     `;
 
     const ChildDivColor = styled.div`
@@ -47,6 +60,7 @@ import styled from "styled-components";
 
     export {
     MainDIvContainer,
+    BoxContainer,
     ChildDivContainer,
     ChildDivColor,
     DashboardParagraph,
