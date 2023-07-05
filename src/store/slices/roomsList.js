@@ -5,7 +5,8 @@ export const roomsList = [{
     "bed_Type": "Doueble Bed",
     "room_floor": "Floor A-1",
     "facilities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
-    "rate": "$145/",
+    "price": "$145",
+    "offer": "100",
     "status":"Available"
   }, {
     "id": 2,
@@ -13,7 +14,8 @@ export const roomsList = [{
     "bed_Type": "Suite",
     "room_floor": "Floor A-1",
     "facilities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
-    "rate": "$145/",
+    "price": "$145",
+    "offer": "100",
     "status":"Available"
   }, {
     "id": 3,
@@ -21,7 +23,8 @@ export const roomsList = [{
     "bed_Type": "Doueble Bed",
     "room_floor": "Floor A-1",
     "facilities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
-    "rate": "$145/",
+    "price": "$145",
+    "offer": "100",
     "status":"Booked"
   }, {
     "id": 4,
@@ -29,7 +32,8 @@ export const roomsList = [{
     "bed_Type": "Doueble Bed",
     "room_floor": "Floor A-1",
     "facilities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
-    "rate": "$145/",
+    "price": "$145",
+    "offer": "100",
     "status":"Booked"
   }, {
     "id": 5,
@@ -37,7 +41,8 @@ export const roomsList = [{
     "bed_Type": "Single Superior",
     "room_floor": "Floor A-1",
     "facilities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
-    "rate": "$145/",
+    "price": "$145",
+    "offer": "100",
     "status":"Available"
   }, {
     "id": 6,
@@ -45,7 +50,8 @@ export const roomsList = [{
     "bed_Type": "Doueble Superior",
     "room_floor": "Floor A-1",
     "facilities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
-    "rate": "$145/",
+    "price": "$145",
+    "offer": "100",
     "status":"Available"
   }, {
     "id": 7,
@@ -53,7 +59,8 @@ export const roomsList = [{
     "bed_Type": "Suite",
     "room_floor": "Floor A-1",
     "facilities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
-    "rate": "$145/",
+    "price": "$145",
+    "offer": "100",
     "status":"Available"
   }, {
     "id": 8,
@@ -61,7 +68,8 @@ export const roomsList = [{
     "bed_Type": "Doueble Bed",
     "room_floor": "Floor A-1",
     "facilities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
-    "rate": "$145/",
+    "price": "$145",
+    "offer": "100",
     "status":"Available"
   }, {
     "id": 9,
@@ -69,7 +77,8 @@ export const roomsList = [{
     "bed_Type": "Doueble Bed",
     "room_floor": "Floor A-1",
     "facilities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
-    "rate": "$145/",
+    "price": "$145",
+    "offer": "100",
     "status":"Booked"
   }, {
     "id": 10,
@@ -77,7 +86,8 @@ export const roomsList = [{
     "bed_Type": "Single Bed",
     "room_floor": "Floor A-1",
     "facilities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
-    "rate": "$145/",
+    "price": "$145",
+    "offer": "100",
     "status":"Available"
   }, {
     "id": 11,
@@ -85,7 +95,8 @@ export const roomsList = [{
     "bed_Type": "Doueble Bed",
     "room_floor": "Floor A-1",
     "facilities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
-    "rate": "$145/",
+    "price": "$145",
+    "offer": "100",
     "status":"Booked"
   }, {
     "id": 12,
@@ -93,7 +104,8 @@ export const roomsList = [{
     "bed_Type": "Single Bed",
     "room_floor": "Floor A-1",
     "facilities": "AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV, Wifi",
-    "rate": "$145/",
+    "price": "$145",
+    "offer": "100",
     "status":"Available",
   }
   ]

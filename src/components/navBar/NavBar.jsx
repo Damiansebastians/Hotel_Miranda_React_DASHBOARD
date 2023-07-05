@@ -1,6 +1,8 @@
 import { HiMenuAlt2, HiMenuAlt3, HiOutlineLogout, HiOutlineBell, HiOutlineMail } from "react-icons/hi";
 import { Nav, NavItemContainer } from "./NavBar.styled";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../store/slices/loginSlice";
 
 const NavBar = (props) => {
     const navigate = useNavigate();
@@ -33,13 +35,16 @@ const NavBar = (props) => {
         }
     };
 
-    // BORRAR DATOS DE STORAGE Y REDIRIGIR A LOGIN
-    const handleLogOut = () => {
-        localStorage.removeItem("logged");
-        localStorage.removeItem("email");
-        localStorage.removeItem("password");
+    //REDIRIGIR A LOGIN
+
+const isLogged = useSelector((state) => state.loginSlice.isLogged)
+
+    const dispatch = useDispatch()
+
+    if (!isLogged) {
         navigate("/");
-    };
+    }    
+
 
     // REDIRIGIR A CONTACTO
     const HandleMail = () => {
@@ -57,7 +62,7 @@ const NavBar = (props) => {
             <NavItemContainer>
                 <HiOutlineMail onClick={HandleMail} />
                 <HiOutlineBell />
-                <HiOutlineLogout onClick={handleLogOut} />
+                <HiOutlineLogout onClick={()=> dispatch(logout())} />
             </NavItemContainer>
             </Nav>
         </>
@@ -73,7 +78,7 @@ const NavBar = (props) => {
             <NavItemContainer>
                 <HiOutlineMail onClick={HandleMail} />
                 <HiOutlineBell />
-                <HiOutlineLogout onClick={handleLogOut} />
+                <HiOutlineLogout onClick={()=> dispatch(logout())} />
             </NavItemContainer>
             </Nav>
         </>

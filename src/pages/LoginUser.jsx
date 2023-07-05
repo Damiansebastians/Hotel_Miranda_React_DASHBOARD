@@ -1,31 +1,33 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import logo from "../assets/images/Logo_Hotel.png";
 import Button from "../components/Button";
 import {Input} from "../components/Input";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../store/slices/loginSlice";
 
 function LoginUser () {
 
-  const {email, setEmail, password, setPassword} = useContext(AuthContext)
   const navigate = useNavigate()
 
-  const handlesLogin = (e) => {
-    e.preventDefault();
-    console.log(email);
-    console.log(password);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    localStorage.setItem('logged', 'true');
-    localStorage.setItem('email', email);
-    localStorage.setItem('password', password);
+  const isLogged = useSelector((state) => state.loginSlice.isLogged)
+  
+  const dispatch = useDispatch()
 
+  if (isLogged) {
     navigate("/dashboard");
+    
   };
+
+
 
   return (
   
-    <form onSubmit={(e) => handlesLogin(e)}>
+    <form onSubmit={() => dispatch(login({email,password}))}>
     <FormAccess >
         <TitleForm>Login for Access to Dashboard</TitleForm>
         <img src={logo} alt="Logo Hotel" />

@@ -102,13 +102,15 @@ import styled from "styled-components";
     margin-bottom: 50px;
     `;
     const ListTitleTop = styled.p`
-    color: rgb(110, 110, 110);
-    font-weight: 500;
+    color: ${(props) => props.selected ? "#135846" : "rgb(110, 110, 110)"};
+    font-weight: ${(props) => (props.selected ? "bold" : "500")};
     padding: 12px 30px;
     border-bottom: 1px solid rgb(212, 212, 212);
-    :hover {
-        color: #135846;
-        font-weight: 700;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        font-weight: bold;
         cursor: pointer;
         border-bottom: 2px solid #135846;
     }

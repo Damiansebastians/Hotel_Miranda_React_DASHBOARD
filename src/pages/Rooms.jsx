@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import img from "../assets/images/Logo_Hotel.png";
 import { useSelector, useDispatch } from "react-redux";
 import { TiDelete } from "react-icons/ti";
 import {
@@ -20,11 +18,13 @@ import {
     NewRoomButtonContainer,
     NewRoomButton,
     } from "../styles/RoomsStyled";
-import { deleteRoom, fetchAllRooms } from "../store/slices/roomsSlice";
+import { deleteRoom, fetchAllRooms, selectRoom,  } from "../store/slices/roomsSlice";
 
     const Rooms = () => {
     const dispatch = useDispatch();
     const { list, status } = useSelector((state) => state.roomSlice);
+    const rooms = list;
+    const [filter, setFilter] = useState("all");
 
     useEffect(() => {
         dispatch(fetchAllRooms());
@@ -34,13 +34,39 @@ import { deleteRoom, fetchAllRooms } from "../store/slices/roomsSlice";
         dispatch(deleteRoom(id));
     };
 
+//FILTROS
+    const filterRooms = () => {
+        switch (filter) {
+        case "active":
+            return rooms.filter((room) => room.status === "Available");
+        case "inactive":
+            return rooms.filter((room) => room.status === "Booked");
+        default:
+            return rooms;
+        }
+    };
+    
+    const filteredRooms = filterRooms();
+
     return (
         <>
             <HeaderContainer>
                 <ListTitleTopContainer>
-                <ListTitleTop>All Rooms</ListTitleTop>
-                <ListTitleTop>Active Employee</ListTitleTop>
-                <ListTitleTop>Inactive Employee</ListTitleTop>
+                    <ListTitleTop 
+                    onClick={() => setFilter("all")}
+                    selected={filter === "all"} >
+                        All Rooms
+                    </ListTitleTop>
+                    <ListTitleTop
+                    onClick={() => setFilter("active")}
+                    selected={filter === "active"} >
+                        Active Rooms
+                    </ListTitleTop>
+                    <ListTitleTop 
+                    onClick={() => setFilter("inactive")}
+                    selected={filter === "inactive"} >
+                        Inactive Rooms
+                    </ListTitleTop>
                 </ListTitleTopContainer>
                 <NewRoomButtonContainer>
                 <NewRoomButton 
@@ -64,12 +90,13 @@ import { deleteRoom, fetchAllRooms } from "../store/slices/roomsSlice";
                     <TableHead>Bed Type</TableHead>
                     <TableHead>Room Floor</TableHead>
                     <TableHead>Facilities</TableHead>
-                    <TableHead>Rate</TableHead>
+                    <TableHead>Price</TableHead>
+                    <TableHead>Offer Price</TableHead>
                     <TableHead>Status</TableHead>
                 </RowHeader>
                 </thead>
                 <tbody>
-                {list.map((room) => (
+                {filteredRooms.map((room) => (
                     <TableRow key={room.id}>
                     <ImgContainer>
                         <TableData>
@@ -91,8 +118,14 @@ import { deleteRoom, fetchAllRooms } from "../store/slices/roomsSlice";
                     </TableData>
                     <TableData>
                         <Paragraph>
-                        {room.rate}
-                        <Span>night</Span>
+                        {room.price}
+                        <Span>/night</Span>
+                        </Paragraph>
+                    </TableData>
+                    <TableData>
+                        <Paragraph>
+                        {room.offer}
+                        <Span>/night</Span>
                         </Paragraph>
                     </TableData>
                     <TableData>

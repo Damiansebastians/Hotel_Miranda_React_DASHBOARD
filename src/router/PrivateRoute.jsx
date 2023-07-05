@@ -1,8 +1,9 @@
+import { useSelector } from "react-redux"
 import { Navigate, Outlet } from "react-router-dom"
 
 export const PrivateRoute = () => {
 
-    const isLogged = localStorage.getItem("logged")
+    const isLogged = useSelector((state) => state.loginSlice.isLogged)
 
             if (!isLogged) {
                 return <Navigate to='/' />
