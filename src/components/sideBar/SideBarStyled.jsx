@@ -68,12 +68,30 @@ const TextLogo = styled.p`
     align-items: center;
     justify-content: space-around;
     color: #799283;
+    gap: 20px;
+    position: relative;
 
-    :hover{
-        left: 0;
-        color: #E23428;
-        border-radius: 6px 0px 0px 6px;
-        border-left: 8px solid #E23428;
+    &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -72px;
+    height: 100%;
+    width: 8px;
+    background-color: #e23428;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: none;
+    }
+
+    &:hover::before {
+    display: block;
+    }
+
+    &:hover {
+    transform: scale(1.1);
+    font-weight: bold;
+    color: #e23428;
     }
 `;
 //--------------------------------------------
@@ -127,10 +145,12 @@ const TextLogo = styled.p`
     color: #135846;
     padding: 15px 35px;
     margin-bottom: 24px;
-
+    transition: transform 0.3s ease;
+    
     &:hover {
         cursor: pointer;
-        scale: 1.1;
+        transform: scale(1.1);
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
     }
 `;
 //----------------------------------------------

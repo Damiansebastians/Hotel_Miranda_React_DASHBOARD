@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
     const TableContainer = styled.div`
-    margin: 0 auto;
-    padding-top: 56px;
+    border-collapse: collapse;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    padding-bottom: 150px;
+    align-content: space-around;
+    align-items: center;
     `;
     const Table = styled.table`
     border-collapse: collapse;
@@ -28,10 +29,10 @@ import styled from "styled-components";
 
     const TableData = styled.td`
     padding: 15px;
-    
+
     img {
-        width: 90px;
-        height: 90px;
+        width: 150px;
+        height: 77px;
         border-radius: 8px;
         transition: transform 0.3s ease;
 
@@ -41,23 +42,20 @@ import styled from "styled-components";
         }
     }
     `;
-//---------------------------------------------
+//--------------------------------------------
     const RowHeader = styled.tr`
-    border-bottom: 1px solid #ccc;
-
+    border-bottom: 1px solid #cccccc;
     `;
+
     const Paragraph = styled.p`
     max-width: 300px;
-    font-size: 16px;
-    line-height:25px;
+    font-weight: 500;
+    color: #212121;
     font-family: 'Poppins';
-    font-weight: bold;
-    color: ${(props) => props.color || "#393939"};
     `;
-//---------------------------------------------
+//--------------------------------------------
     const Span = styled.span`
-    color: ${(props) => props.color};
-    padding-bottom: 10px;
+    color: #799283;
     `;
     const ImgContainer = styled.div`
     display: flex;
@@ -68,20 +66,41 @@ import styled from "styled-components";
     flex-direction: column;
     text-align: initial;
     margin-right: 80px;
+    color: #212121;
     `;
+    //---------------------------------------------
+    const ButtonList = styled.button`
+    font-size: 19px;
+    font-family: 'Poppins';
+    text-align: center;
+    letter-spacing: 0px;
+    width: 110px;
+    height: 50px;
+    color: #ffffff;
+    background-color: ${(props) => props.bgcolor};
+    padding: 13px ;
+    border: none;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover{
+        transform: scale(1.1);
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+    }
+`;
 //---------------------------------------------
     const HeaderContainer = styled.div`
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding-top: 100px;
     `;
-//---------------------------------------------
     const ListTitleTopContainer = styled.div`
     display: flex;
     width: 60%;
     margin-bottom: 50px;
     `;
-//---------------------------------------------
     const ListTitleTop = styled.p`
     color: rgb(110, 110, 110);
     font-weight: 500;
@@ -94,56 +113,13 @@ import styled from "styled-components";
         border-bottom: 2px solid #135846;
     }
     `;
-//---------------------------------------------
-    const ButtonList = styled.button`
-    font-size: 19px;
-    font-family: 'Poppins';
-    text-align: center;
-    letter-spacing: 0px;
-    width: 110px;
-    height: 50px;
-    color: ${(props) => props.color};
-    background-color: ${(props) => props.bgcolor};
-    padding: 13px ;
-    border: none;
-    font-weight: bold;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-
-    &:hover{
-        transform: scale(1.1);
-        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
-    }
-`;
-//---------------------------------------------
-const ButtonRequest = styled.button`
-    font-size: 19px;
-    font-family: 'Poppins';
-    text-align: center;
-    letter-spacing: 0px;
-    width: 160px;
-    height: 50px;
-    color: ${(props) => props.color};
-    background-color: ${(props) => props.bgcolor};
-    border: ${(props) => props.border};
-    padding: 13px ;
-    font-weight: bold;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-
-    &:hover{
-        transform: scale(1.1);
-        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);}
-`;
-//---------------------------------------------
+    //---------------------------------------------
     const NewRoomButtonContainer = styled.div`
     display: flex;
     `;
-//---------------------------------------------
+    //--------------------------------------------
     const NewRoomButton = styled.button`
-    width: 427px;
+    width: 170px;
     height: 49px;
     border-radius: 12px;
     margin-left: 20px;
@@ -155,7 +131,7 @@ const ButtonRequest = styled.button`
     font-family: 'Poppins';
     padding: 13px 23px;
     border: none;
-    `;
+`;
 
     export {
     TableContainer,
@@ -168,12 +144,10 @@ const ButtonRequest = styled.button`
     Span,
     ImgContainer,
     ParagraphContainer,
+    ButtonList,
     HeaderContainer,
     ListTitleTopContainer,
     ListTitleTop,
-    ButtonList,
-    ButtonRequest,
     NewRoomButtonContainer,
     NewRoomButton,
 };
-

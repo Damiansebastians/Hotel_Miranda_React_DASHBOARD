@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { GrCheckbox } from "react-icons/gr"
 import { RiMoreLine } from "react-icons/ri"
 import Data from "../../data/GuestList.json";
 
@@ -55,10 +54,7 @@ import {
             <Table>
                 <thead>
                 <RowHeader>
-                    <TableHead>
-                    <GrCheckbox style={{ width: '24px', height: '24px', marginRight:'25px'}}/>
-                    Guest
-                    </TableHead>
+                    <TableHead>Guest</TableHead>
                     <TableHead>Order Date</TableHead>
                     <TableHead>Check In</TableHead>
                     <TableHead>Ckeck out</TableHead>
@@ -73,7 +69,7 @@ import {
                     <ImgContainer>
                         <TableData
                         width={"100px"}
-                        height={"50px"}
+                        height={"90px"}
                         padding={"25px"}
                         >
                         <Link to={`/bookings/${guest.id}`}>
