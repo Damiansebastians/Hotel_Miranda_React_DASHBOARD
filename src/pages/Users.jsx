@@ -128,7 +128,6 @@ const Users = () => {
           </tbody>
         </Table>
       </TableContainer>
-      )
     </>
   );
 };

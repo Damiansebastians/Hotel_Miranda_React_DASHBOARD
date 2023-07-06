@@ -12,7 +12,7 @@ import {
     DashboardSpan,
     IconContainer,
     BoxContainer,
-    } from "../styles/DashboardStyles";
+    } from "../styles/DashboardStyled";
 
 //----------------------------------------------------------
     const ContactCardsContainer = styled.div`

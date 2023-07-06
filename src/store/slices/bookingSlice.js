@@ -66,7 +66,6 @@ export const bookingsSlice = createSlice({
     builder.addCase(getSingleBooking.fulfilled, (state, action) => {
       state.status = "succeeded";
       state.singleBooking = action.payload;
-      // state.singleBooking= state.list.find(booking => booking.id == action.payload)
     });
 
     builder.addCase(deleteBooking.fulfilled, (state, action) => {

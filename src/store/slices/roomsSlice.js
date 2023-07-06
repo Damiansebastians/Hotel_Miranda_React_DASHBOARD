@@ -1,8 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { roomsList } from "./roomsList";
 import { delaySlice } from "./delaySlice";
+import { RoomsList } from "../../data/RoomsList";
 
-const rooms = roomsList;
+
+const rooms = RoomsList;
 
 const initialState = {
   list: [],

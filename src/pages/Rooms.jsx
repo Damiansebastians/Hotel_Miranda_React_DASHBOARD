@@ -18,7 +18,7 @@ import {
     NewRoomButtonContainer,
     NewRoomButton,
     } from "../styles/RoomsStyled";
-import { deleteRoom, fetchAllRooms, selectRoom,  } from "../store/slices/roomsSlice";
+import { deleteRoom, fetchAllRooms  } from "../store/slices/roomsSlice";
 
     const Rooms = () => {
     const dispatch = useDispatch();
@@ -150,7 +150,6 @@ import { deleteRoom, fetchAllRooms, selectRoom,  } from "../store/slices/roomsSl
                 ))}
                 </tbody>
             </Table>
-        )
         </>
     );
 };

@@ -38,16 +38,9 @@ export const Layout = (props) => {
     position: relative;
   `;
 
-  const LateralMenu = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  `;
-
   const [open, setOpen] = useState(true);
 
-  return (
+  return ( 
     <>
       <Container>
         <LeftMenu open={open}>
@@ -61,5 +54,5 @@ export const Layout = (props) => {
         </RightSection>
       </Container>
     </>
-  );
+  )
 };
