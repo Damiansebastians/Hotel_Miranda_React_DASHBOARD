@@ -1,4 +1,4 @@
-[
+export const BookingsList = [
         {
         "id": 1,
         "img": "https://randomuser.me/api/portraits/men/1.jpg",
@@ -118,7 +118,7 @@
         "Special_Request": "View Notes",
         "Room_type": "Deluxe D - 117",
         "Status": "Booked"
-        }
+}
 ]
 
 

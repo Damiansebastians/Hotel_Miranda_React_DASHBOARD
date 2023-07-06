@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { RiMoreLine } from "react-icons/ri"
-import Data from "../../data/GuestList.json";
+
 
 import {
     TableContainer,
@@ -22,6 +22,7 @@ import {
     NewRoomButtonContainer,
     NewRoomButton,
     } from "./TableStyled.jsx"
+import { BookingsList } from "../../data/BookingsList.js";
 
     const TableList = () => {
 
@@ -64,7 +65,7 @@ import {
                 </RowHeader>
                 </thead>
                 <tbody>
-                {Data.map((guest) => (
+                {BookingsList.map((guest) => (
                     <TableRow key={guest.id}>
                     <ImgContainer>
                         <TableData

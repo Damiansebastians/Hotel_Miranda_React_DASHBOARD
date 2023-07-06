@@ -8,6 +8,7 @@ import styled from "styled-components";
     align-content: space-around;
     align-items: center;
     `;
+
     const Table = styled.table`
     border-collapse: collapse;
     background: #ffffff;
@@ -39,10 +40,9 @@ import styled from "styled-components";
         &:hover{
         transform: scale(1.1);
         box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
-        }
-    }
+        }}
     `;
-//--------------------------------------------
+
     const RowHeader = styled.tr`
     border-bottom: 1px solid #cccccc;
     `;
@@ -53,14 +53,16 @@ import styled from "styled-components";
     color: #212121;
     font-family: 'Poppins';
     `;
-//--------------------------------------------
+
     const Span = styled.span`
     color: #799283;
     `;
+
     const ImgContainer = styled.div`
     display: flex;
     align-items: center;
     `;
+
     const ParagraphContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -68,7 +70,7 @@ import styled from "styled-components";
     margin-right: 80px;
     color: #212121;
     `;
-    //---------------------------------------------
+    
     const ButtonList = styled.button`
     font-size: 19px;
     font-family: 'Poppins';
@@ -90,17 +92,19 @@ import styled from "styled-components";
         box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
     }
 `;
-//---------------------------------------------
+
     const HeaderContainer = styled.div`
     width: 100%;
     display: flex;
     padding-top: 100px;
     `;
+
     const ListTitleTopContainer = styled.div`
     display: flex;
     width: 60%;
     margin-bottom: 50px;
     `;
+
     const ListTitleTop = styled.p`
     color: ${(props) => props.selected ? "#135846" : "rgb(110, 110, 110)"};
     font-weight: ${(props) => (props.selected ? "bold" : "500")};
@@ -115,11 +119,11 @@ import styled from "styled-components";
         border-bottom: 2px solid #135846;
     }
     `;
-    //---------------------------------------------
+    
     const NewRoomButtonContainer = styled.div`
     display: flex;
     `;
-    //--------------------------------------------
+    
     const NewRoomButton = styled.button`
     width: 170px;
     height: 49px;

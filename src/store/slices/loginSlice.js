@@ -9,28 +9,28 @@ export const loginSlice = createSlice({
   name: "login",
   initialState,
   reducers: {
-
     login: (state, action) => {
       if (
         action.payload.email === "admin@admin.com" &&
         action.payload.password === "admin"
       ) {
         return {
-            ...state,
-            email: action.payload.email,
-            isLogged: true,
-          };
-      }  else {
-        alert("something went wrong");
+          ...state,
+          email: action.payload.email,
+          isLogged: true,
+        };
+      } else {
+        alert("Email or password wrong");
         return { ...state, isLogged: false };
       }
     },
-    logout : ()=> ({...initialState }),
+    logout: () => ({ ...initialState }),
+
     update: (state, action) => {
-        return { ...state, email: action.payload};
-    }
+      return { ...state, email: action.payload };
+    },
   },
 });
 
-export const { login, logout, update } = loginSlice.actions
-export default loginSlice.reducer
+export const { login, logout, update } = loginSlice.actions;
+export default loginSlice.reducer;

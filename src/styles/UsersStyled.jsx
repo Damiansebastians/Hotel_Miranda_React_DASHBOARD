@@ -1,53 +1,58 @@
 import styled from "styled-components";
 
     const TableContainer = styled.div`
-    margin: 0 auto;
     border-collapse: collapse;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-content: space-around;
     margin-top:127px;
-    margin-left: 150px;
-    padding-bottom: 150px;
-    margin-left: ${(props) => props.margin};
-    transition: margin-left 0.5s;
     `;
+
     const Table = styled.table`
     border-collapse: collapse;
-    background: #ffffff 0% 0% no-repeat padding-box;
+    background: #ffffff;
     border-radius: 20px;
+    text-align: left;
     `;
 
     const TableHead = styled.td`
     padding: 15px;
-    color: var(--unnamed-color-393939);
-    font: normal normal 600 18px/27px Poppins;
+    color: #393939;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Poppins';
     `;
+
     const TableRow = styled.tr`
-    opacity: 1;
     border-top: 1px solid rgb(212, 212, 212);
-    :hover {
-        box-shadow: 0px 4px 30px #00000014;
-    }
     `;
 
     const TableData = styled.td`
     padding: 25px;
+
     img {
         width: 88px;
         height: 88px;
         border-radius: 12px;
-    }
+        transition: transform 0.3s ease;
+
+        &:hover{
+        transform: scale(1.1);
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+        }}
     `;
+
     const RowHeader = styled.tr`
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #cccccc;
     `;
+
     const Paragraph = styled.p`
     max-width: 300px;
-    font-weight: ${(props) => props.weight};
+    font-weight: bold;
     color: ${(props) => props.color || "#393939"};
-    font-family: var(--font-poppins);
+    font-family: 'Poppins';
     `;
 
     const Span = styled.span`
@@ -63,12 +68,13 @@ import styled from "styled-components";
     flex-direction: column;
     text-align: initial;
     margin-right: 80px;
+    color: #212121;
     `;
 
-    /** Button Header **/
     const HeaderContainer = styled.div`
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+
     `;
     const ListTitleTopContainer = styled.div`
     display: flex;
@@ -76,13 +82,15 @@ import styled from "styled-components";
     margin-bottom: 50px;
     `;
     const ListTitleTop = styled.p`
-    color: rgb(110, 110, 110);
-    font-weight: 500;
+    color: ${(props) => props.selected ? "#135846" : "rgb(110, 110, 110)"};
+    font-weight: ${(props) => (props.selected ? "bold" : "500")};
     padding: 12px 30px;
     border-bottom: 1px solid rgb(212, 212, 212);
-    :hover {
-        color: #135846;
-        font-weight: 700;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        font-weight: bold;
         cursor: pointer;
         border-bottom: 2px solid #135846;
     }
@@ -91,13 +99,18 @@ import styled from "styled-components";
     const NewRoomButtonContainer = styled.div`
     display: flex;
     `;
+
     const NewRoomButton = styled.button`
+    width: 170px;
+    height: 49px;
     border-radius: 12px;
     margin-left: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 25px;
     background-color: ${(props) => props.bgColor};
-    height: 49px;
     color: ${(props) => props.color};
-    font-family: Poppins;
+    font-family: 'Poppins';
     padding: 13px 23px;
     border: none;
     `;
