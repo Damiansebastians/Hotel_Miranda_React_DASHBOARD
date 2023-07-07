@@ -1,15 +1,14 @@
-import { useSelector } from "react-redux"
-import { Navigate, Outlet } from "react-router-dom"
+import React, { useContext } from "react";
+import { Navigate, Outlet } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
-export const PrivateRoute = () => {
+    export const PrivateRoute = () => {
+    const { isLogged } = useContext(AuthContext);
 
-    const isLogged = useSelector((state) => state.loginSlice.isLogged)
+    if (!isLogged) {
+        return <Navigate to="/" />;
+    }
 
-            if (!isLogged) {
-                return <Navigate to='/' />
-            }
+    return <Outlet />;
+};
 
-            return (
-                <Outlet /> 
-            )
-}

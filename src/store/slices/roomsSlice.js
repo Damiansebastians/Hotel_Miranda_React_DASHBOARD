@@ -13,7 +13,7 @@ const initialState = {
 };
 
 export const fetchAllRooms = createAsyncThunk(
-  "room/delaySlice",
+  "room/fetchAllRooms",
   async (data) => {
     return await delaySlice(rooms);
   }

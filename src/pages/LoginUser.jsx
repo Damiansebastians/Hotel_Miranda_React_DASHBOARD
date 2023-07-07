@@ -1,36 +1,40 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import logo from "../assets/images/Logo_Hotel.png";
 import Button from "../components/Button";
 import { Input } from "../components/Input";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { login } from "../store/slices/loginSlice";
+import { AuthContext } from "../context/AuthContext";
+
 
 function LoginUser() {
   const navigate = useNavigate();
-
+  const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const isLogged = useSelector((state) => state.loginSlice.isLogged);
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const dispatch = useDispatch();
-
-  if (isLogged) {
+    login(email, password);
     navigate("/dashboard");
-  }
+  };
 
   return (
-    <form onSubmit={() => dispatch(login({ email, password }))}>
+    <form onSubmit={handleSubmit}>
       <FormAccess>
         <TitleForm>Login for Access to Dashboard</TitleForm>
-        <img src={logo} alt="Logo Hotel" style={{
-                width:'170px',
-                marginTop: '-20px'}} />
+        <img
+          src={logo}
+          alt="Logo Hotel"
+          style={{
+            width: "170px",
+            marginTop: "-20px",
+          }}
+        />
         <InfoForm>
           <p>Please login using the following credentials:</p>
-          Email: admin@gmail.com 
+          Email: admin@gmail.com
           Password: admin
         </InfoForm>
         <InputForm>
@@ -62,7 +66,7 @@ function LoginUser() {
       </FormAccess>
     </form>
   );
-}
+};
 
 const FormAccess = styled.div`
   display: flex;
@@ -91,7 +95,7 @@ const TitleForm = styled.h2`
 const InfoForm = styled.p`
   width: 80%;
   margin-top: -20px;
-  font-family: 'Helvetica', sans-serif;
+  font-family: "Helvetica", sans-serif;
   font-size: 18px;
   color: #000000;
   text-transform: none;
