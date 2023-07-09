@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import logo from "../assets/images/Logo_Hotel.png";
 import Button from "../components/Button";
@@ -9,7 +9,7 @@ import { AuthContext } from "../context/AuthContext";
 
 function LoginUser() {
   const navigate = useNavigate();
-  const { login } = useContext(AuthContext);
+  const { login, isLogged } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,6 +19,11 @@ function LoginUser() {
     login(email, password);
     navigate("/dashboard");
   };
+
+  useEffect(() => {
+      isLogged && navigate("/dashboard") 
+  }, [isLogged, navigate])
+  
 
   return (
     <form onSubmit={handleSubmit}>

@@ -1,10 +1,13 @@
 import { HiMenuAlt2, HiMenuAlt3, HiOutlineLogout, HiOutlineBell, HiOutlineMail } from "react-icons/hi";
 import { Nav, NavItemContainer } from "./NavBar.styled";
 import { useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+import { useContext } from "react";
 
 const NavBar = (props) => {
     const navigate = useNavigate();
     const location = useLocation();
+    const { logout } = useContext(AuthContext);
 
     //MOSTRAR EL TITULO SEGUN LA ROUTE
     const TitlePage = () => {
@@ -35,7 +38,7 @@ const NavBar = (props) => {
 
     //REDIRIGIR A LOGIN
     const HandleLogout = () => {
-        localStorage.clear(); 
+        logout();
         navigate("/");
     };
 

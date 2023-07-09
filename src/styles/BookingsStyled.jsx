@@ -347,6 +347,15 @@ const ImageRightContainer = styled.div`
   }
 `;
 
+const ContactCardsContainer = styled.div`
+  display: flex;
+  flex: wrap;
+  margin-top: 10px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 70px;
+`;
+
 export {
   TableContainer,
   Table,
@@ -374,6 +383,7 @@ export {
   TitleBookings,
   IdBookings,
   ContactBookings,
+  ContactCardsContainer,
   IconPhoneContainer,
   SendMessageButton,
   IconChatContainer,

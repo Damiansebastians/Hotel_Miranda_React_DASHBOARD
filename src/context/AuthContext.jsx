@@ -3,8 +3,8 @@ import React, { createContext, useReducer } from "react";
 export const AuthContext = createContext();
 
 const initialState = {
-  email: "",
-  isLogged: false,
+  email: localStorage.getItem("email") || "",
+  isLogged: localStorage.getItem("isLogged") || false,
 };
 
 export const authUser = (state, action) => {
