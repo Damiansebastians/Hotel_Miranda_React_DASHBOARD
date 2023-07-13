@@ -26,7 +26,7 @@ function LoginUser() {
   
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form data-test-id="login-form" onSubmit={handleSubmit}>
       <FormAccess>
         <TitleForm>Login for Access to Dashboard</TitleForm>
         <img
