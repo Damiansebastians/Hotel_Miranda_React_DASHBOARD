@@ -39,7 +39,7 @@ function LoginUser() {
         />
         <InfoForm>
           <p>Please login using the following credentials:</p>
-          Email: admin@gmail.com
+          Email: admin@admin.com
           Password: admin
         </InfoForm>
         <InputForm>
