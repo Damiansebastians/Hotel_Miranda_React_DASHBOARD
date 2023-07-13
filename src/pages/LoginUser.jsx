@@ -48,6 +48,7 @@ function LoginUser() {
             name="email"
             id="email"
             value={email}
+            required
             onChange={(e) => setEmail(e.target.value)}
             autoCompleted="off"
             placeholder="Email"
@@ -58,6 +59,7 @@ function LoginUser() {
             name="password"
             id="password"
             value={password}
+            required
             onChange={(e) => setPassword(e.target.value)}
             autoCompleted="off"
             placeholder="Password"

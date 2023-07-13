@@ -1,4 +1,3 @@
-
 import { it } from "mocha";
 
 describe('Login', () => {
@@ -46,6 +45,20 @@ it("Should not be able to access bookings without logging in", () => {
       expect(message).to.equal("Email or password wrong");
     });
   });
+
+  it("Should display error messages for empty fields", () => {
+    cy.get("form").within(() => {
+      
+      cy.get("#email").focus().blur();
+      cy.get("#email:invalid").should("exist"); 
+      
+      cy.get("#password").focus().blur();
+      cy.get("#password:invalid").should("exist"); 
+      
+      cy.get("button").click();
+    });
+  });
+  
 });
 
 
