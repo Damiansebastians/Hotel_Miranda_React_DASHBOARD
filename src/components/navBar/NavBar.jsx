@@ -58,7 +58,7 @@ const NavBar = (props) => {
             <NavItemContainer>
                 <HiOutlineMail onClick={HandleMail} />
                 <HiOutlineBell />
-                <HiOutlineLogout onClick={HandleLogout} />
+                <HiOutlineLogout data-test-id="logout-button" onClick={HandleLogout} />
             </NavItemContainer>
             </Nav>
         </>
@@ -74,7 +74,7 @@ const NavBar = (props) => {
             <NavItemContainer>
                 <HiOutlineMail onClick={HandleMail} />
                 <HiOutlineBell />
-                <HiOutlineLogout onClick={HandleLogout} />
+                <HiOutlineLogout data-test-id="logout-button" onClick={HandleLogout} />
             </NavItemContainer>
             </Nav>
         </>

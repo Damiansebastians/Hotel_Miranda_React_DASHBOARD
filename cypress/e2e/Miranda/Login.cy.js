@@ -45,18 +45,56 @@ it("Should not be able to access bookings without logging in", () => {
       expect(message).to.equal("Email or password wrong");
     });
   });
-
-  it("Should display error messages for empty fields", () => {
+//------------------------------------------------------
+  it("Should display required messages for empty fields", () => {
     cy.get("form").within(() => {
-      
-      cy.get("#email").focus().blur();
       cy.get("#email:invalid").should("exist"); 
-      
-      cy.get("#password").focus().blur();
       cy.get("#password:invalid").should("exist"); 
       
       cy.get("button").click();
     });
+  });
+
+//-------------------------------------------------------
+  it("Should stay logged in after page reload", () => {
+    cy.get("form").within(() => {
+      cy.get("input#email").type("admin@admin.com");
+      cy.get("input#password").type("admin");
+      cy.get("button").click();
+    });
+  
+    cy.reload();
+    cy.url().should("include", "/dashboard");
+  });
+ //------------------------------------------------------- 
+  it("Should save isLogged and email in Local Storage", () => {
+    const isLogged = "true";
+    const email = "admin@admin.com";
+  
+    cy.get("form").within(() => {
+      cy.get("#email").type(email);
+      cy.get("#password").type("admin");
+      cy.get("button").click();
+    });
+  
+    cy.window().then((win) => {
+      const savedIsLogged = win.localStorage.getItem("isLogged");
+      const savedEmail = win.localStorage.getItem("email");
+  
+      expect(savedIsLogged).to.equal(isLogged);
+      expect(savedEmail).to.equal(email);
+    });
+  });
+  //--------------------------------------------------------
+  it("Should logout successfully", () => {
+    cy.get("form").within(() => {
+      cy.get("input#email").type("admin@admin.com");
+      cy.get("input#password").type("admin");
+      cy.get("button").click();
+    });
+  
+    cy.get("[data-test-id='logout-button']").click();
+    cy.url().should("include", "/");
   });
   
 });

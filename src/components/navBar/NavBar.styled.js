@@ -14,7 +14,7 @@ import { styled } from "styled-components";
     `;
 
     export const NavItemContainer = styled.div`
-        padding-right: 18%;
+        padding-right: 25%;
         font-size: 24px;
         color: #262626;
         display: flex;
