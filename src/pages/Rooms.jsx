@@ -19,6 +19,7 @@ import {
     NewRoomButton,
     } from "../styles/RoomsStyled";
 import { deleteRoom, fetchAllRooms  } from "../store/slices/roomsSlice";
+import { Link } from "react-router-dom";
 
     const Rooms = () => {
     const dispatch = useDispatch();
@@ -72,7 +73,9 @@ import { deleteRoom, fetchAllRooms  } from "../store/slices/roomsSlice";
                 <NewRoomButton 
                     bgColor={"#135846"} 
                     color={"#ffffff"}>
+                <Link to='/rooms/newRoom'>
                     + New Room
+                </Link>
                 </NewRoomButton>
                 <NewRoomButton 
                     color={"#135846"}

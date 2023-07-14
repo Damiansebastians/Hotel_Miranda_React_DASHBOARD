@@ -9,6 +9,7 @@ import Bookings from "../pages/Bookings";
 import { PrivateRoute } from "./PrivateRoute";
 import { Layout } from "../components/Layout";
 import BookingsView from "../pages/BookingsView";
+import NewRoom from "../pages/NewRoom";
 
 export const AppRouter = () => {
   return (
@@ -22,6 +23,7 @@ export const AppRouter = () => {
             <Route path="/bookings" element={<Bookings />} />
             <Route path="/bookings/:id" element={<BookingsView  />} />
             <Route path="/rooms" element={<Rooms />} />
+            <Route path='/rooms/newRoom' element={<NewRoom />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Navigate to="/dashboard" />} />
           </Route>
