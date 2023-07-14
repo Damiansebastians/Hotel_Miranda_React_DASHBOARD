@@ -2,9 +2,9 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { ButtonList } from './styles/BookingsStyled';
+import { ButtonList } from '../styles/BookingsStyled';
 
-describe('Test BottonList', () => {
+describe('Test ButtonList', () => {
 //----------------------------------------------------------
 test("No props on button", () => {
   render(<ButtonList>Test</ButtonList>);
