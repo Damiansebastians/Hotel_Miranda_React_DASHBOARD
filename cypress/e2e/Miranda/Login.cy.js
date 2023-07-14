@@ -23,7 +23,7 @@ it("Should not be able to access bookings without logging in", () => {
 });
 
 //-------------------------------------------------------
-  it("Should allow user to log in with valid credentials", () => {
+  it("Should allow user to login with valid credentials", () => {
     cy.get("form").within(() => {
       cy.get("input#email").type("admin@admin.com");
       cy.get("input#password").type("admin");

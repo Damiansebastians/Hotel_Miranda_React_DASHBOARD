@@ -70,7 +70,7 @@ const Contact = () => {
                   <Paragraph>{guest.comment}</Paragraph>
                 </TableData>
                 <TableData>
-                  <Button color={"red"} bgcolor={"#E8FFEE"}>
+                  <Button data-testid="button" color={"red"} bgcolor={"#E8FFEE"}>
                     {guest.action}
                   </Button>
                 </TableData>

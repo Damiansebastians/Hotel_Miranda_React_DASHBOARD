@@ -5,7 +5,6 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dnd": "^16.0.1",
@@ -24,7 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "cypress run": "cypress run"
   },
   "eslintConfig": {
     "extends": [
@@ -46,8 +46,10 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@testing-library/react": "^14.0.0",
     "cypress": "^12.17.1",
     "eslint-plugin-cypress": "^2.13.3",
+    "jest-styled-components": "^7.1.1",
     "mocha": "^10.2.0"
   }
 }
