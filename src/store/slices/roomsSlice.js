@@ -25,14 +25,14 @@ export const getSingleRoom = createAsyncThunk(
     return id;
   }
 );
-export const deleteRoom = createAsyncThunk("room/deleteRoom", async (id) => {
+export const deleteRoom = createAsyncThunk("rooms/deleteRoom", async (id) => {
   return id;
 });
-export const addRoom = createAsyncThunk("room/addRoom", async (newRoom) => {
+export const addRoom = createAsyncThunk("rooms/newRoom", async (newRoom) => {
   return newRoom;
 });
 
-export const editRoom = createAsyncThunk("room/editRoom", async (room) => {
+export const editRoom = createAsyncThunk("rooms/editRoom", async (room) => {
   return room;
 });
 
@@ -68,8 +68,17 @@ export const roomSlice = createSlice({
       state.list = state.list.filter((room) => room.id !== action.payload);
     });
 
-    builder.addCase(addRoom.fulfilled, (state, action) => {
+    builder
+    .addCase(addRoom.pending, (state) => {
+      state.isLoading = true;
+      state.hasError = false;
+    })
+    .addCase(addRoom.fulfilled, (state, action) => {
       state.list = [...state.list, action.payload];
+    })
+    .addCase(addRoom.rejected, (state) => {
+      state.isLoading = false;
+      state.hasError = true;
     });
 
     builder.addCase(editRoom.fulfilled, (state, action) => {

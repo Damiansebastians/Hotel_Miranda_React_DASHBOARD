@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { addRoom } from '../store/slices/roomsSlice';
 import {
   ButtonList,
   FormFooter,
@@ -7,12 +10,8 @@ import {
   FormPhoto,
   FormRoomContainer,
   ImgInput,
-  MainContainer,
 } from "../styles/RoomsStyled";
-import { useDispatch, useSelector } from "react-redux";
 
-import { useNavigate } from "react-router-dom";
-import { addRoom } from "../store/slices/roomsSlice";
 import {
   DataContainer,
   MainDataContainer,
@@ -21,21 +20,13 @@ import {
 
 function NewRoom() {
   const dispatch = useDispatch();
-
   const [img, setImg] = useState([]);
-
   const [imgURL, setImgURL] = useState([]);
-
   const [type, setType] = useState();
-
   const [price, setPrice] = useState();
-
   const [number, setNumber] = useState();
-
   const [discount, setDiscount] = useState();
-
   const [amenities, setAmenities] = useState();
-
   const hasError = useSelector((state) => state.rooms);
 
   const navigate = useNavigate();
@@ -87,8 +78,6 @@ function NewRoom() {
       type: type,
       price: parseInt(price),
       number: parseInt(number),
-      photo:
-        "https://www.hotelcarlemanygirona.com/thumb?src=/media/habitaciones/superior-premium/habitacion-premium-1.jpg&w=600",
       offer: parseInt(discount),
       amenities: amenities,
       status: true,
