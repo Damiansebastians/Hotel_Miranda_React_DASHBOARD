@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { RiMoreLine } from "react-icons/ri"
-import { BookingsList } from "../data/BookingsList.js";
+import { BookingsList } from "../data/BookingsList";
+
 
 import {
     TableContainer,
@@ -21,7 +22,7 @@ import {
     ButtonRequest,
     NewRoomButtonContainer,
     NewRoomButton,
-    } from "../styles/BookingsStyled.jsx"
+    } from "../styles/BookingsStyled"
 
 
     const Bookings = () => {

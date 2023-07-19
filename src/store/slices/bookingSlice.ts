@@ -1,45 +1,54 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { delaySlice } from "./delaySlice.js";
 import { BookingsList } from "../../data/BookingsList.js";
+import { Booking } from "../../Interfaces/BookingInterface";
+
+
+interface BookingsState{
+  list: Booking[];
+  singleBooking: Booking | {};
+  status: 'loading' | 'succeeded' | 'failed' | null;
+  error?: string;
+}
 
 const bookings = BookingsList;
 
-const initialState = {
+const initialState: BookingsState = {
   list: [],
   singleBooking: {},
-  loading: false,
-  error: false,
+  status: null,
+  error: "",
 };
 
 export const fetchAllBookings = createAsyncThunk(
   "bookings/delayFunction",
   async (data) => {
-    return await delaySlice(bookings);
+    return await delaySlice(bookings) as Booking[];
   }
 );
 export const getSingleBooking = createAsyncThunk(
   "bookings/getSinlgeBooking",
-  async (id) => {
-    const fetchSingleBooking = bookings.find((booking) => booking.id === id);
-    return await delaySlice(fetchSingleBooking);
+  async (id: number) => {
+    const fetchSingleBooking = bookings.find(booking => booking.id === id);
+    return await delaySlice(fetchSingleBooking) as Booking;
   }
 );
 export const deleteBooking = createAsyncThunk(
   "bookings/deleteBooking",
-  async (id) => {
+  async (id: number) => {
     return id;
   }
 );
 export const addBooking = createAsyncThunk(
   "bookings/addBooking",
-  async (newRoom) => {
+  async (newRoom: Booking) => {
     return newRoom;
   }
 );
 
 export const editBooking = createAsyncThunk(
   "bookings/ediBooking",
-  async (room) => {
+  async (room: Booking) => {
     return room;
   }
 );
@@ -47,6 +56,7 @@ export const editBooking = createAsyncThunk(
 export const bookingsSlice = createSlice({
   name: "bookings",
   initialState,
+  reducers: {},
   extraReducers(builder) {
     builder
       .addCase(fetchAllBookings.pending, (state, action) => {
@@ -84,6 +94,5 @@ export const bookingsSlice = createSlice({
   },
 });
 
-export const selectBookings = (state) => state.bookings.list;
-
+export const selectBookings = (state: { bookings: BookingsState }) => state.bookings.list;
 export default bookingsSlice.reducer;
