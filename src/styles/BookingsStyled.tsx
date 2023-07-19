@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { AllProps, ColorProps, MarginProps } from "../Interfaces/StyledInterface";
 
 //------------------------BOOKINGS-----------------------------------
 
@@ -47,7 +48,7 @@ const TableData = styled.td`
 const RowHeader = styled.tr`
   border-bottom: 1px solid #ccc;
 `;
-const Paragraph = styled.p`
+const Paragraph = styled.p<ColorProps>`
   max-width: 300px;
   font-size: 16px;
   line-height: 25px;
@@ -56,7 +57,7 @@ const Paragraph = styled.p`
   color: ${(props) => props.color || "#393939"};
 `;
 //---------------------------------------------
-const Span = styled.span`
+const Span = styled.span<ColorProps>`
   color: ${(props) => props.color};
   padding-bottom: 10px;
 `;
@@ -96,7 +97,7 @@ const ListTitleTop = styled.p`
   }
 `;
 //---------------------------------------------
-const ButtonList = styled.button`
+const ButtonList = styled.button<AllProps>`
   font-size: 19px;
   font-family: "Poppins";
   text-align: center;
@@ -118,7 +119,7 @@ const ButtonList = styled.button`
   }
 `;
 //---------------------------------------------
-const ButtonRequest = styled.button`
+const ButtonRequest = styled.button<AllProps>`
   font-size: 19px;
   font-family: "Poppins";
   text-align: center;
@@ -144,7 +145,7 @@ const NewRoomButtonContainer = styled.div`
   display: flex;
 `;
 //---------------------------------------------
-const NewRoomButton = styled.button`
+const NewRoomButton = styled.button<AllProps>`
   width: 427px;
   height: 49px;
   border-radius: 12px;
@@ -152,7 +153,7 @@ const NewRoomButton = styled.button`
   font-size: 16px;
   font-weight: 600;
   line-height: 25px;
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.bgcolor};
   color: ${(props) => props.color};
   font-family: "Poppins";
   padding: 13px 23px;
@@ -264,7 +265,7 @@ const CheckinOutDataContainer = styled.div`
   margin-left: 5%;
 `;
 
-const CheckinDataContainer = styled.div`
+const CheckinDataContainer = styled.div<MarginProps>`
   text-align: left;
   margin-right: ${(props) => props.margin};
 `;

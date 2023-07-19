@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { delaySlice } from "./delaySlice";
 import { RoomsList } from "../../data/RoomsList";
 import { Room } from "../../Interfaces/RoomInterface";
-
+import { RootState } from "../Store";
 
 const rooms = RoomsList;
 
@@ -94,5 +94,5 @@ export const roomSlice = createSlice({
   },
 });
 
-export const selectRoom = (state: { room: RoomState }) => state.room.list;
+export const selectRoom = (state: RootState) => state.roomSlice.list;
 export default roomSlice.reducer;

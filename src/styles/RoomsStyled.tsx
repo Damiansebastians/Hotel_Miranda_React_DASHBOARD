@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { AllProps, BgColorProps } from "../Interfaces/StyledInterface";
 
     const TableContainer = styled.div`
     border-collapse: collapse;
@@ -71,7 +72,7 @@ import styled from "styled-components";
     color: #212121;
     `;
     
-    const ButtonList = styled.button`
+    const ButtonList = styled.button<BgColorProps>`
     font-size: 19px;
     font-family: 'Poppins';
     text-align: center;
@@ -105,9 +106,9 @@ import styled from "styled-components";
     margin-bottom: 50px;
     `;
 
-    const ListTitleTop = styled.p`
-    color: ${(props) => props.selected ? "#135846" : "rgb(110, 110, 110)"};
-    font-weight: ${(props) => (props.selected ? "bold" : "500")};
+    const ListTitleTop = styled.p<AllProps>`
+    color: ${(props) => props.color ? "#135846" : "rgb(110, 110, 110)"};
+    font-weight: ${(props) => (props.color ? "bold" : "500")};
     padding: 12px 30px;
     border-bottom: 1px solid rgb(212, 212, 212);
     transition: transform 0.3s ease;
@@ -124,7 +125,7 @@ import styled from "styled-components";
     display: flex;
     `;
     
-    const NewRoomButton = styled.button`
+    const NewRoomButton = styled.button<BgColorProps>`
     width: 170px;
     height: 49px;
     border-radius: 12px;
@@ -132,7 +133,7 @@ import styled from "styled-components";
     font-size: 16px;
     font-weight: 600;
     line-height: 25px;
-    background-color: ${(props) => props.bgColor};
+    background-color: ${(props) => props.bgcolor};
     color: ${(props) => props.color};
     font-family: 'Poppins';
     padding: 13px 23px;

@@ -1,6 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+interface LoginState{
+  email: string | null;
+  isLogged: boolean;
+};
+
+interface LoginPayload {
+  email: string;
+  password: string;
+}
+
+const initialState: LoginState = {
   email: "",
   isLogged: false,
 };
@@ -9,7 +19,7 @@ export const loginSlice = createSlice({
   name: "login",
   initialState,
   reducers: {
-    login: (state, action) => {
+    login: (state, action: PayloadAction<LoginPayload>) => {
       if (
         action.payload.email === "admin@admin.com" &&
         action.payload.password === "admin"
@@ -26,7 +36,7 @@ export const loginSlice = createSlice({
     },
     logout: () => ({ ...initialState }),
 
-    update: (state, action) => {
+    update: (state, action: PayloadAction<string>) => {
       return { ...state, email: action.payload };
     },
   },

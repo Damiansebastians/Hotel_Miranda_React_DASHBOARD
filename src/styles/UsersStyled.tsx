@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { AllProps, ColorProps } from "../Interfaces/StyledInterface";
+import { AllArrayKeys } from "reselect/es/types";
 
     const TableContainer = styled.div`
     border-collapse: collapse;
@@ -48,14 +50,14 @@ import styled from "styled-components";
     border-bottom: 1px solid #cccccc;
     `;
 
-    const Paragraph = styled.p`
+    const Paragraph = styled.p<ColorProps>`
     max-width: 300px;
     font-weight: bold;
     color: ${(props) => props.color || "#393939"};
     font-family: 'Poppins';
     `;
 
-    const Span = styled.span`
+    const Span = styled.span<ColorProps>`
     color: ${(props) => props.color};
     padding-bottom: 10px;
     `;
@@ -81,9 +83,9 @@ import styled from "styled-components";
     width: 60%;
     margin-bottom: 50px;
     `;
-    const ListTitleTop = styled.p`
-    color: ${(props) => props.selected ? "#135846" : "rgb(110, 110, 110)"};
-    font-weight: ${(props) => (props.selected ? "bold" : "500")};
+    const ListTitleTop = styled.p<AllProps>`
+    color: ${(props) => props ? "#135846" : "rgb(110, 110, 110)"};
+    font-weight: ${(props) => (props ? "bold" : "500")};
     padding: 12px 30px;
     border-bottom: 1px solid rgb(212, 212, 212);
     transition: transform 0.3s ease;
@@ -100,7 +102,7 @@ import styled from "styled-components";
     display: flex;
     `;
 
-    const NewRoomButton = styled.button`
+    const NewRoomButton = styled.button<AllProps>`
     width: 170px;
     height: 49px;
     border-radius: 12px;
@@ -108,7 +110,7 @@ import styled from "styled-components";
     font-size: 16px;
     font-weight: 600;
     line-height: 25px;
-    background-color: ${(props) => props.bgColor};
+    background-color: ${(props) => props.bgcolor};
     color: ${(props) => props.color};
     font-family: 'Poppins';
     padding: 13px 23px;

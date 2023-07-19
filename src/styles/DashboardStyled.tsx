@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BgColorProps, ColorProps } from "../Interfaces/StyledInterface";
 
     const MainDIvContainer = styled.div`
     margin-left: 380px;
@@ -33,7 +34,7 @@ import styled from "styled-components";
     }
     `;
 
-    const ChildDivColor = styled.div`
+    const ChildDivColor = styled.div<BgColorProps>`
     background-color: ${(props) => props.bgcolor};
     margin: 29px 22px 0 30px;
     width: 65px;
@@ -53,7 +54,7 @@ import styled from "styled-components";
     color: #787878;
     font-size: 14px;
     `;
-    const IconContainer = styled.div`
+    const IconContainer = styled.div<ColorProps>`
     color: ${(props) => props.color};
     margin-top: 15px;
     `;

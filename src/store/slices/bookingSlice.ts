@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { delaySlice } from "./delaySlice.js";
 import { BookingsList } from "../../data/BookingsList.js";
 import { Booking } from "../../Interfaces/BookingInterface";
+import { RootState } from "../Store.js";
 
 
 interface BookingsState{
@@ -22,7 +23,7 @@ const initialState: BookingsState = {
 
 export const fetchAllBookings = createAsyncThunk(
   "bookings/delayFunction",
-  async (data) => {
+  async () => {
     return await delaySlice(bookings) as Booking[];
   }
 );
@@ -59,7 +60,7 @@ export const bookingsSlice = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder
-      .addCase(fetchAllBookings.pending, (state, action) => {
+      .addCase(fetchAllBookings.pending, (state) => {
         console.log("loading");
         state.status = "loading";
       })
@@ -73,6 +74,7 @@ export const bookingsSlice = createSlice({
         state.status = "failed";
         state.error = action.error.message;
       });
+      
     builder.addCase(getSingleBooking.fulfilled, (state, action) => {
       state.status = "succeeded";
       state.singleBooking = action.payload;
@@ -94,5 +96,5 @@ export const bookingsSlice = createSlice({
   },
 });
 
-export const selectBookings = (state: { bookings: BookingsState }) => state.bookings.list;
+export const selectBookings = (state: RootState) => state.bookingsSlice.list;
 export default bookingsSlice.reducer;
