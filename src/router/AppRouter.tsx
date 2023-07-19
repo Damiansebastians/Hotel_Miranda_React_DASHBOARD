@@ -11,7 +11,7 @@ import { Layout } from "../components/Layout";
 import BookingsView from "../pages/BookingsView";
 import NewRoom from "../pages/NewRoom";
 
-export const AppRouter = () => {
+export const AppRouter: React.FC = () => {
   return (
     <>
       <Routes>

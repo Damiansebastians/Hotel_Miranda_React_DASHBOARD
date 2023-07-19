@@ -1,13 +1,26 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, ReactNode } from "react";
 
-export const AuthContext = createContext();
+interface AuthState {
+  email: string;
+  isLogged: boolean;
+}
 
-const initialState = {
+interface LoginPayload {
+  email: string;
+  password: string;
+}
+
+type AuthAction =
+  | { type: "Login"; payload: LoginPayload }
+  | { type: "Logout" }
+  | { type: "Update"; payload: { email: string } };
+
+const initialState: AuthState = {
   email: localStorage.getItem("email") || "",
-  isLogged: localStorage.getItem("isLogged") || false,
+  isLogged: localStorage.getItem("isLogged") === "true" || false,
 };
 
-export const authUser = (state, action) => {
+export const authUser = (state: AuthState, action: AuthAction) => {
   switch (action.type) {
     case "Login":
       if (
@@ -43,10 +56,27 @@ export const authUser = (state, action) => {
   }
 };
 
-export const AuthProvider = ({ children }) => {
+interface AuthContextValue extends AuthState {
+  login: (email: string, password: string) => void;
+  logout: () => void;
+  updateEmail: (newEmail: string) => void;
+}
+
+export const AuthContext = createContext<AuthContextValue>({
+  ...initialState,
+  login: () => {},
+  logout: () => {},
+  updateEmail: () => {},
+});
+
+interface AuthProviderProps {
+  children: ReactNode;
+}
+
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [state, dispatch] = useReducer(authUser, initialState);
 
-  const login = (email, password) => {
+  const login = (email:string, password:string) => {
     dispatch({ type: "Login", payload: { email, password } });
   };
 
@@ -54,16 +84,15 @@ export const AuthProvider = ({ children }) => {
     dispatch({ type: "Logout" });
   };
 
-  const updateEmail = (newEmail) => {
+  const updateEmail = (newEmail: string) => {
     dispatch({
       type: "Update",
       payload: { email: newEmail },
     });
   };
 
-  const authContextValue = {
-    email: state.email,
-    isLogged: state.isLogged,
+  const authContextValue: AuthContextValue = {
+    ...state,
     login,
     logout,
     updateEmail,

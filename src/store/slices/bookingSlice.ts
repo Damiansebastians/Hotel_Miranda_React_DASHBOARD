@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { delaySlice } from "./delaySlice.js";
-import { BookingsList } from "../../data/BookingsList.js";
+import { delaySlice } from "./delaySlice";
+import { BookingsList } from "../../data/BookingsList";
 import { Booking } from "../../Interfaces/BookingInterface";
-import { RootState } from "../Store.js";
+import { RootState } from "../Store";
 
 
 interface BookingsState{
