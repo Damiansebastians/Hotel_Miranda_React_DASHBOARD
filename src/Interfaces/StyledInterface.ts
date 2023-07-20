@@ -17,6 +17,10 @@ export interface MarginProps {
 
 export interface WeightProps {
   fontWeight: string; 
+};
+
+export interface WidthProps {
+  width: string;
 }
 
 export type AllProps = BgColorProps & ColorProps & BorderProps & MarginProps & WeightProps;

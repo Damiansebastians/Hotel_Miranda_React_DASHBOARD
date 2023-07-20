@@ -23,9 +23,9 @@ import {
     ButtonEdit,
     TitleLogo,
     TextLogo,
-    } from "./SideBarStyled.jsx";
+    } from "./SideBarStyled";
 
-    const SideBar = () => {
+    const SideBar: React.FC = () => {
 
     return (
         <LateralMenu>
@@ -40,7 +40,7 @@ import {
                 <LinkContainer>
                 <NavLink
                     to="/dashboard"
-                    className={({ isActive }) => isActive && "active"}
+                    className={({ isActive }) => (isActive ? "active" : "")}
                     style={{ textDecoration: "none" }} >
                     <ElementsDiv>
                     <RiDashboardLine size={25} />
@@ -50,7 +50,7 @@ import {
 
                 <NavLink
                     to="/bookings"
-                    className={({ isActive }) => isActive && "active"}
+                    className={({ isActive }) => (isActive ? "active" : "")}
                     style={{ textDecoration: "none" }} >
                     <ElementsDiv>
                     <TbCalendarMinus size={25} />
@@ -60,7 +60,7 @@ import {
 
                 <NavLink
                     to="/rooms"
-                    className={({ isActive }) => isActive && "active"}
+                    className={({ isActive }) => (isActive ? "active" : "")}
                     style={{ textDecoration: "none" }}>
                     <ElementsDiv>
                     <BiKey size={25} />
@@ -70,7 +70,7 @@ import {
 
                 <NavLink
                     to="/users"
-                    className={({ isActive }) => isActive && "active"}
+                    className={({ isActive }) => (isActive ? "active" : "")}
                     style={{ textDecoration: "none" }}>
                     <ElementsDiv>
                     <FaUserAlt size={25} />
@@ -80,7 +80,7 @@ import {
 
                 <NavLink
                     to="/contact"
-                    className={({ isActive }) => isActive && "active"}
+                    className={({ isActive }) => (isActive ? "active" : "")}
                     style={{ textDecoration: "none" }}>
                     <ElementsDiv>
                     <AiFillContacts size={25} />

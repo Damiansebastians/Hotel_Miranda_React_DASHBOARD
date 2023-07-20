@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { AllProps, ColorProps } from "../Interfaces/StyledInterface";
-import { AllArrayKeys } from "reselect/es/types";
 
     const TableContainer = styled.div`
     border-collapse: collapse;

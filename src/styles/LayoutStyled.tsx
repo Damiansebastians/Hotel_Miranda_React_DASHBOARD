@@ -1,10 +1,10 @@
-import { Outlet } from "react-router-dom";
-import { useState } from "react";
 import styled, { css } from "styled-components";
-import NavBar from "./navBar/NavBar";
-import SideBar from "./sideBar/SideBar";
 
-export const Layout = (props) => {
+export interface RightSectionProps {
+  open: boolean;
+  width: string;
+}
+
   const Container = styled.div`
     min-height: 100vh;
     display: flex;
@@ -12,7 +12,7 @@ export const Layout = (props) => {
     max-width: 100vw;
   `;
 
-  const LeftMenu = styled.div`
+  const LeftMenu = styled.div<RightSectionProps>`
     display: inline-block;
     width: 300px;
     background-color: #ffffff;
@@ -23,7 +23,7 @@ export const Layout = (props) => {
       `}
   `;
 
-  const RightSection = styled.section`
+  const RightSection = styled.section<RightSectionProps>`
     display: inline-block;
     width: ${(props) => (props.open ? "calc(100% - 300px)" : "100%")};
   `;
@@ -38,21 +38,9 @@ export const Layout = (props) => {
     position: relative;
   `;
 
-  const [open, setOpen] = useState(true);
-
-  return ( 
-    <>
-      <Container>
-        <LeftMenu open={open}>
-          <SideBar />
-        </LeftMenu>
-        <RightSection open={open}>
-          <NavBar setAuth={props.setAuth} showSideBar={setOpen} open={open} />
-          <Content>
-            <Outlet />
-          </Content>
-        </RightSection>
-      </Container>
-    </>
-  )
-};
+  export {
+    Container,
+    LeftMenu,
+    RightSection,
+    Content,
+  }

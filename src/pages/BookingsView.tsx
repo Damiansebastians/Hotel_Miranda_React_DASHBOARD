@@ -1,10 +1,10 @@
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../hooks/hooks';
 import { HiPhone } from "react-icons/hi";
 import { BsChatText } from "react-icons/bs";
 import { BiBed } from "react-icons/bi";
 import { MdSecurity } from "react-icons/md";
 import { AiOutlineWifi } from "react-icons/ai";
-import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleBooking } from "../store/slices/bookingSlice";
 import {
@@ -21,7 +21,6 @@ import {
   SendMessageButton,
   IconChatContainer,
   CheckinOutDataContainer,
-  CheckinDataContainer,
   CheckinDataSpan,
   CheckinDataDate,
   Line,
@@ -31,13 +30,14 @@ import {
   AmenitiesContainer,
   AmenitiesIconContainer,
   ImageRightContainer,
+  CheckinDataContainer,
 } from "../styles/BookingsStyled";
 
 const BookingsView = () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const bookingSingleStore = useSelector(
+  const bookingSingleStore = useAppSelector(
     (state) => state.bookingsSlice.singleBooking
   );
 
@@ -52,12 +52,12 @@ const BookingsView = () => {
           <MainDataContainer>
             <MainDivTitle>
               <ImageContainer>
-                <img src={bookingSingleStore.img} alt="pic" />
+                <img src={bookingSingleStore?.img} alt="pic" />
               </ImageContainer>
               <MainDataBookings>
-                <TitleBookings>{bookingSingleStore.Guest}</TitleBookings>
+                <TitleBookings>{bookingSingleStore?.Guest}</TitleBookings>
                 <IdBookings>
-                  ID {bookingSingleStore.id} /10000541651
+                  ID {bookingSingleStore?.id} /10000541651
                 </IdBookings>
                 <ContactBookings>
                   <IconPhoneContainer>
@@ -76,13 +76,13 @@ const BookingsView = () => {
               <CheckinDataContainer margin={"110px"}>
                 <CheckinDataSpan>Check in</CheckinDataSpan>
                 <CheckinDataDate>
-                  {bookingSingleStore.Check_in} | 08:23 AM
+                  {bookingSingleStore?.Check_in} | 08:23 AM
                 </CheckinDataDate>
               </CheckinDataContainer>
-              <CheckinDataContainer>
+              <CheckinDataContainer margin={"110px"}>
                 <CheckinDataSpan>Check out</CheckinDataSpan>
                 <CheckinDataDate>
-                  {bookingSingleStore.Check_out}
+                  {bookingSingleStore?.Check_out}
                 </CheckinDataDate>
               </CheckinDataContainer>
             </CheckinOutDataContainer>
@@ -91,10 +91,10 @@ const BookingsView = () => {
               <CheckinDataContainer margin={"200px"}>
                 <CheckinDataSpan>Room info</CheckinDataSpan>
                 <CheckinDataDate>
-                  {bookingSingleStore.Room_type}
+                  {bookingSingleStore?.Room_type}
                 </CheckinDataDate>
               </CheckinDataContainer>
-              <CheckinDataContainer>
+              <CheckinDataContainer margin={"110px"}>
                 <CheckinDataSpan>Price</CheckinDataSpan>
                 <CheckinDataDate>$145/night</CheckinDataDate>
               </CheckinDataContainer>
@@ -129,7 +129,7 @@ const BookingsView = () => {
           </MainDataContainer>
         </DataContainer>
         <ImageRightContainer>
-          <img src={bookingSingleStore.img} alt="img" />
+          <img src={bookingSingleStore?.img} alt="img" />
         </ImageRightContainer>
       </BookingsDetailsContainer>
       )

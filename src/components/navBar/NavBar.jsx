@@ -44,7 +44,7 @@ const NavBar = (props) => {
 
     // REDIRIGIR A CONTACTO
     const HandleMail = () => {
-        navigate("/Contact");
+        navigate("/contact");
     };
 
     if (props.open) {

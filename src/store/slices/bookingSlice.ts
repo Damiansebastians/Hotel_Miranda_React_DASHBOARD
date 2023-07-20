@@ -7,7 +7,7 @@ import { RootState } from "../Store";
 
 interface BookingsState{
   list: Booking[];
-  singleBooking: Booking | {};
+  singleBooking: Booking | null;
   status: 'loading' | 'succeeded' | 'failed' | null;
   error?: string;
 }
@@ -16,7 +16,7 @@ const bookings = BookingsList;
 
 const initialState: BookingsState = {
   list: [],
-  singleBooking: {},
+  singleBooking: null,
   status: null,
   error: "",
 };
