@@ -1,10 +1,15 @@
+import React, { useContext } from "react";
 import { HiMenuAlt2, HiMenuAlt3, HiOutlineLogout, HiOutlineBell, HiOutlineMail } from "react-icons/hi";
-import { Nav, NavItemContainer } from "./NavBar.styled";
+import { Nav, NavItemContainer } from "./NavBarStyled";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { useContext } from "react";
 
-const NavBar = (props) => {
+interface NavBarProps {
+    open: boolean;
+    showSideBar: (open: boolean) => void;
+  };
+
+const NavBar: React.FC<NavBarProps> = (props) => {
     const navigate = useNavigate();
     const location = useLocation();
     const { logout } = useContext(AuthContext);

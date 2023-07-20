@@ -6,7 +6,7 @@ import { Container, Content, LeftMenu, RightSection } from "../styles/LayoutStyl
 
 interface LayoutProps {
   setAuth: (value: boolean) => void;
-}
+};
 
 export const Layout: React.FC<LayoutProps> = (props) => {
   const [open, setOpen] = useState(true);

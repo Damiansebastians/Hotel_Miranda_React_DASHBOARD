@@ -25,7 +25,7 @@ import {
     TextLogo,
     } from "./SideBarStyled";
 
-    const SideBar: React.FC = () => {
+const SideBar: React.FC = () => {
 
     return (
         <LateralMenu>
