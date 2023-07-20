@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 
 export interface RightSectionProps {
   open: boolean;
-  width: string;
 }
 
   const Container = styled.div`

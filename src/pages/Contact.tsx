@@ -1,6 +1,8 @@
 import React from "react";
 import { ContactList } from "../data/ContactList";
 import CardContact from "../components/CardContact";
+import Button from "../components/Button";
+import { Guest } from "../Interfaces/ContactInterface";
 import {
   ContactCardsContainer,
   TableContainer,
@@ -17,10 +19,9 @@ import {
   NewRoomButtonContainer,
   NewRoomButton,
 } from "../styles/BookingsStyled";
-import Button from "../components/Button";
 
 
-const Contact = () => {
+const Contact: React.FC = () => {
   return (
     <>
       <TableContainer>
@@ -36,7 +37,7 @@ const Contact = () => {
             <ListTitleTop>Archive</ListTitleTop>
           </ListTitleTopContainer>
           <NewRoomButtonContainer right={"40px"}>
-            <NewRoomButton color={"#135846"}>Newest</NewRoomButton>
+            <NewRoomButton color={"#135846"} bgcolor={"#ffffff"}>Newest</NewRoomButton>
           </NewRoomButtonContainer>
         </HeaderContainer>
         <Table>
@@ -50,7 +51,7 @@ const Contact = () => {
             </RowHeader>
           </thead>
           <tbody>
-            {ContactList.map((guest) => (
+            {ContactList.map((guest: Guest) => (
               <TableRow key={guest.id}>
                 <ImgContainer>
                   <TableData

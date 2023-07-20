@@ -1,19 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
-import styled from "styled-components";
 import logo from "../assets/images/Logo_Hotel.png";
 import Button from "../components/Button";
 import { Input } from "../components/Input";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { ButtonForm, ForgotPasswordForm, FormAccess, InfoForm, InputForm, TitleForm } from "../styles/LoginUserStyled";
 
 
 function LoginUser() {
   const navigate = useNavigate();
   const { login, isLogged } = useContext(AuthContext);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     login(email, password);
@@ -50,7 +50,6 @@ function LoginUser() {
             value={email}
             required
             onChange={(e) => setEmail(e.target.value)}
-            autoCompleted="off"
             placeholder="Email"
           />
           <label htmlFor="email"></label>
@@ -61,7 +60,6 @@ function LoginUser() {
             value={password}
             required
             onChange={(e) => setPassword(e.target.value)}
-            autoCompleted="off"
             placeholder="Password"
           />
           <label htmlFor="password"></label>
@@ -74,59 +72,5 @@ function LoginUser() {
     </form>
   );
 };
-
-const FormAccess = styled.div`
-  display: flex;
-  margin: 45px auto;
-  padding: 15px;
-  align-items: center;
-  flex-direction: column;
-  max-width: 55vh;
-  width: 80%;
-  height: 85vh;
-  background: #ffffff;
-  box-shadow: 0px 8px 32px 0px #000000;
-  border-radius: 10px;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.3rem;
-  gap: 3%;
-`;
-
-const TitleForm = styled.h2`
-  font-family: "Roboto";
-  font-weight: bold;
-  color: green;
-`;
-
-const InfoForm = styled.p`
-  width: 80%;
-  margin-top: -20px;
-  font-family: "Helvetica", sans-serif;
-  font-size: 18px;
-  color: #000000;
-  text-transform: none;
-`;
-
-const InputForm = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  height: 20%;
-  width: 100%;
-`;
-
-const ButtonForm = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const ForgotPasswordForm = styled.h4`
-  cursor: pointer;
-  color: blueviolet;
-`;
 
 export default LoginUser;
