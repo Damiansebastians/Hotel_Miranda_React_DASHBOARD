@@ -9,6 +9,6 @@ import { AuthContext } from "../context/AuthContext";
         return <Navigate to="/" />;
     }
 
-    return <Outlet />;
+    return <Outlet />
 };
 

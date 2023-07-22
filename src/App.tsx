@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { AppRouter } from "./router/AppRouter";
 import "./App.css";
@@ -5,7 +6,7 @@ import { Provider } from "react-redux";
 import { store } from "./store/Store";
 import { AuthProvider } from "./context/AuthContext";
 
-function App() {
+const App: React.FC = () => {
   return (
     <AuthProvider>
       <BrowserRouter>
@@ -17,6 +18,7 @@ function App() {
       </BrowserRouter>
     </AuthProvider>
   );
-}
+};
 
 export default App;
+

@@ -1,5 +1,6 @@
 export interface Booking {
   id: number;
+  number?: string;
   Guest: string;
   Order_Date: string;
   Check_in: string;

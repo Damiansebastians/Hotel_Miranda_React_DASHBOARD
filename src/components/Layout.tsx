@@ -6,9 +6,9 @@ import { Container, Content, LeftMenu, RightSection } from "../styles/LayoutStyl
 
 interface LayoutProps {
   setAuth: (value: boolean) => void;
-};
+}
 
-export const Layout: React.FC<LayoutProps> = (props) => {
+const Layout: React.FC<LayoutProps> = ({ setAuth }) => {
   const [open, setOpen] = useState(true);
 
   return ( 
@@ -18,7 +18,7 @@ export const Layout: React.FC<LayoutProps> = (props) => {
           <SideBar />
         </LeftMenu>
         <RightSection open={open}>
-          <NavBar setAuth={props.setAuth} showSideBar={setOpen} open={open} />
+          <NavBar setAuth={setAuth} showSideBar={setOpen} open={open} />
           <Content>
             <Outlet />
           </Content>
@@ -27,3 +27,5 @@ export const Layout: React.FC<LayoutProps> = (props) => {
     </>
   )
 };
+
+export default Layout;

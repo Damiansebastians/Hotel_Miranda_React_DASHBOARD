@@ -1,112 +1,82 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react'
+import { DataContainer, MainDataContainer, MainDivTitle } from '../styles/BookingsStyled';
+import { useAppDispatch } from '../hooks/hooks';
 import { addRoom } from '../store/slices/roomsSlice';
-import {
-  ButtonList,
-  FormFooter,
-  FormHeader,
-  FormMain,
-  FormPhoto,
-  FormRoomContainer,
-  ImgInput,
-} from "../styles/RoomsStyled";
+import { FormFooter, FormHeader, FormMain, FormPhoto, FormRoomContainer, ImgInput } from '../styles/NewRoomStyled';
+import { ButtonList } from '../styles/RoomsStyled';
 
-import {
-  DataContainer,
-  MainDataContainer,
-  MainDivTitle,
-} from "../styles/BookingsStyled";
+interface IRoom {
+  type: string;
+  price: string;
+  number: number;
+  discount: string;
+  description: string;
+  offer: number; 
+  amenities: string;
+}
 
-function NewRoom() {
-  const dispatch = useDispatch();
+const NewRoom = () => {
+
+  const dispatch = useAppDispatch()
   const [img, setImg] = useState([]);
-  const [imgURL, setImgURL] = useState([]);
-  const [type, setType] = useState();
-  const [price, setPrice] = useState();
-  const [number, setNumber] = useState();
-  const [discount, setDiscount] = useState();
-  const [amenities, setAmenities] = useState();
-  const hasError = useSelector((state) => state.rooms);
-
-  const navigate = useNavigate();
+  const [imgURL, setImgURL] = useState<string[]>([]);
+  const [type, setType] = useState<string>();
+  const [price, setPrice] = useState<string>();
+  const [number, setNumber] = useState<string>();
+  const [discount, setDiscount] = useState<string>();
+  const [amenities, setAmenities] = useState<string>();
 
   useEffect(() => {
     if (img.length > 0) {
-      let arrAux = [];
+      let arrAux: string[] = [];
       for (let i = 0; i < img.length; i++) {
-        arrAux.push(URL.createObjectURL(img[i]));
+        let objectImg: string = URL.createObjectURL(img[i])
+        arrAux.push(objectImg)
       }
-      setImgURL(arrAux);
+      setImgURL(arrAux)
     } else {
-      setImgURL([]);
+      setImgURL([])
     }
-  }, [img]);
+  }, [img])
 
-  const handleImageChange = (event) => {
-    setImg(event.target.files);
-  };
+  const handleImageChange = (event: any) => {
+    setImg(event.target.files)
+  }
 
-  const handleTypeChange = (e) => {
-    setType(e.target.value);
-  };
+  const handleTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setType(e.target.value)
+  }
 
-  const handlePriceChange = (e) => {
-    setPrice(e.target.value);
-  };
+  const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPrice(e.target.value)
+  }
 
-  const handleNumberChange = (e) => {
-    setNumber(e.target.value);
-  };
+  const handleNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNumber(e.target.value)
+  }
 
-  const handleAmenitiesChange = (e) => {
-    let amenitiesArray = Array.from(
-      e.target.selectedOptions,
-      (option) => option.value
-    );
-    setAmenities(amenitiesArray);
-  };
+  const handleAmenitiesChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setAmenities(e.target.value)
+  }
 
-  const handleDiscountChange = (e) => {
-    setDiscount(e.target.value);
-  };
+  const handleDiscountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDiscount(e.target.value)
+  }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const newRoom = {
-      type: type,
-      price: parseInt(price),
-      number: parseInt(number),
-      offer: parseInt(discount),
-      amenities: amenities,
-      status: true,
-    };
-
-    for (let key in newRoom) {
-      if (!newRoom[key] && newRoom[key] !== 0) {
-        return (
-          "Something is empty in the creation of the room",
-          {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          }
-        );
-      }
-    }
-    try {
-      dispatch(addRoom(newRoom));
-      if (!hasError) {
-        navigate("/rooms");
-      }
-    } catch (e) {
-      console.log(e);
+  
+    if (type && price && number && discount && amenities) {
+      const room: IRoom = {
+        type,
+        price,
+        number: 0,
+        discount,
+        description: "",
+        offer: 0,    
+        amenities,
+      };
+      dispatch(addRoom(room));
     }
   };
 
@@ -116,7 +86,8 @@ function NewRoom() {
         style={{
           width: "90%",
           marginTop: "80px",
-        }}>
+        }}
+      >
         <DataContainer>
           <FormRoomContainer onSubmit={handleSubmit}>
             <MainDivTitle
@@ -211,12 +182,11 @@ function NewRoom() {
             <FormFooter></FormFooter>
             <ButtonList
               type="submit"
-              onSubmit={handleSubmit}
+              bgcolor={"#135846"}
               style={{
                 width: "229px",
                 border: "2px solid #135846",
                 margin: "20px",
-                backgroundColor: "#135846",
               }}
             >
               Create Room
@@ -229,3 +199,4 @@ function NewRoom() {
 }
 
 export default NewRoom;
+

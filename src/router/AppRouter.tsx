@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import LoginUser from "../pages/LoginUser";
 import Dashboard from "../pages/Dashboard";
@@ -7,17 +7,25 @@ import Rooms from "../pages/Rooms";
 import Contact from "../pages/Contact";
 import Bookings from "../pages/Bookings";
 import { PrivateRoute } from "./PrivateRoute";
-import { Layout } from "../components/Layout";
 import BookingsView from "../pages/BookingsView";
 import NewRoom from "../pages/NewRoom";
+import Layout from "../components/Layout";
 
-export const AppRouter: React.FC = () => {
+
+export const AppRouter: React.FC= () => {
+  const [authenticated, setAuthenticated] = useState(false);
+
+
+  const handleSetAuth = (value: boolean) => {
+    setAuthenticated(value);
+  };
+
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<LoginUser />} />
+        <Route path="/" element={<LoginUser />} />
         <Route element={<PrivateRoute />}>
-          <Route element={<Layout />}>
+          <Route element={<Layout setAuth={handleSetAuth} />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/users" element={<Users />} />
             <Route path="/bookings" element={<Bookings />} />

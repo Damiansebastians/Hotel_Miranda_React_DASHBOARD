@@ -7,6 +7,7 @@ import { AuthContext } from "../../context/AuthContext";
 interface NavBarProps {
     open: boolean;
     showSideBar: (open: boolean) => void;
+    setAuth: (value: boolean) => void;
   };
 
 const NavBar: React.FC<NavBarProps> = (props) => {

@@ -4,7 +4,6 @@ interface AuthState {
   email: string;
   isLogged: boolean;
 }
-
 interface LoginPayload {
   email: string;
   password: string;

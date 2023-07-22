@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { AllProps, ColorProps } from "../Interfaces/StyledInterface";
+import { BgColorProps } from "../Interfaces/StyledInterface";
+import { DetailedHTMLProps, HTMLAttributes } from "react";
+export interface ListTitleTopProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> {
+  selected?: boolean;
+}
 
     const TableContainer = styled.div`
     border-collapse: collapse;
@@ -49,15 +54,14 @@ import { AllProps, ColorProps } from "../Interfaces/StyledInterface";
     border-bottom: 1px solid #cccccc;
     `;
 
-    const Paragraph = styled.p<ColorProps>`
+    const Paragraph = styled.p`
     max-width: 300px;
     font-weight: bold;
-    color: ${(props) => props.color || "#393939"};
+    color: "#393939";
     font-family: 'Poppins';
     `;
 
-    const Span = styled.span<ColorProps>`
-    color: ${(props) => props.color};
+    const Span = styled.span`
     padding-bottom: 10px;
     `;
     const ImgContainer = styled.div`
@@ -82,7 +86,7 @@ import { AllProps, ColorProps } from "../Interfaces/StyledInterface";
     width: 60%;
     margin-bottom: 50px;
     `;
-    const ListTitleTop = styled.p<AllProps>`
+    const ListTitleTop = styled.p<ListTitleTopProps>`
     color: ${(props) => props ? "#135846" : "rgb(110, 110, 110)"};
     font-weight: ${(props) => (props ? "bold" : "500")};
     padding: 12px 30px;
@@ -101,7 +105,7 @@ import { AllProps, ColorProps } from "../Interfaces/StyledInterface";
     display: flex;
     `;
 
-    const NewRoomButton = styled.button<AllProps>`
+    const NewRoomButton = styled.button<BgColorProps>`
     width: 170px;
     height: 49px;
     border-radius: 12px;
@@ -110,7 +114,7 @@ import { AllProps, ColorProps } from "../Interfaces/StyledInterface";
     font-weight: 600;
     line-height: 25px;
     background-color: ${(props) => props.bgcolor};
-    color: ${(props) => props.color};
+    color: "#ffffff";
     font-family: 'Poppins';
     padding: 13px 23px;
     border: none;

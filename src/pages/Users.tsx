@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { HiPhone } from "react-icons/hi";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 import { fetchAllUsers } from "../store/slices/userSlice";
+import { User } from "../Interfaces/UserInterface";
 import {
   TableContainer,
   Table,
@@ -20,11 +21,11 @@ import {
   NewRoomButton,
 } from "../styles/UsersStyled";
 
-const Users = () => {
-  const dispatch = useDispatch();
+const Users: React.FC = () => {
+  const dispatch = useAppDispatch();
 
-  const { list, status } = useSelector((state) => state.usersSlice);
-  const filUsers = list;
+  const { list } = useAppSelector((state) => state.usersSlice);
+  const filUsers: User[] = list;
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
@@ -74,10 +75,13 @@ const Users = () => {
             <ListTitleTop>Search</ListTitleTop>
           </ListTitleTopContainer>
           <NewRoomButtonContainer>
-            <NewRoomButton bgColor={"#135846"} color={"white"}>
+            <NewRoomButton 
+            bgcolor={"#135846"}>
               + New Employee
             </NewRoomButton>
-            <NewRoomButton color={"#135846"}>Newest</NewRoomButton>
+            <NewRoomButton
+            bgcolor={"#aaaea9"}
+            >Newest</NewRoomButton>
           </NewRoomButtonContainer>
         </HeaderContainer>
         <Table>
@@ -94,13 +98,13 @@ const Users = () => {
             {filteredUsers.map((users) => (
               <TableRow key={users.id}>
                 <ImgContainer>
-                  <TableData width={"100px"} height={"90px"} padding={"25px"}>
+                  <TableData width={"100px"} height={"90px"}>
                     <img src={users.img} alt="img" />
                   </TableData>
                   <ParagraphContainer>
-                    <Paragraph weight={"700"}>{users.name}</Paragraph>
-                    <Span>{users.number}</Span>
-                    <Span>Joined on Aug 2th 2017</Span>
+                    <Paragraph>{users.name}</Paragraph>
+                    <Span >{users.number}</Span>
+                    <Span >Joined on Aug 2th 2017</Span>
                   </ParagraphContainer>
                 </ImgContainer>
                 <TableData>

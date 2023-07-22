@@ -1,7 +1,13 @@
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 import styled from "styled-components";
-import { AllProps, ColorProps, MarginProps } from "../Interfaces/StyledInterface";
+import { BgColorProps, BorderProps, Color_BgColorProps, MarginProps } from "../Interfaces/StyledInterface";
 
 //------------------------BOOKINGS-----------------------------------
+
+export interface ListTitleTopProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> {
+  selected?: boolean;
+}
 
 const TableContainer = styled.div`
   margin: 0 auto;
@@ -30,7 +36,7 @@ const TableRow = styled.tr`
 `;
 
 const TableData = styled.td`
-  padding: 15px;
+  padding: 25px;
 
   img {
     width: 90px;
@@ -48,17 +54,16 @@ const TableData = styled.td`
 const RowHeader = styled.tr`
   border-bottom: 1px solid #ccc;
 `;
-const Paragraph = styled.p<ColorProps>`
+const Paragraph = styled.p`
   max-width: 300px;
   font-size: 16px;
   line-height: 25px;
   font-family: "Poppins";
   font-weight: bold;
-  color: ${(props) => props.color || "#393939"};
+  color:"#393939";
 `;
 //---------------------------------------------
-const Span = styled.span<ColorProps>`
-  color: ${(props) => props.color};
+const Span = styled.span`
   padding-bottom: 10px;
 `;
 const ImgContainer = styled.div`
@@ -84,7 +89,7 @@ const ListTitleTopContainer = styled.div`
   margin-bottom: 50px;
 `;
 //---------------------------------------------
-const ListTitleTop = styled.p`
+const ListTitleTop = styled.p<ListTitleTopProps>`
   color: rgb(110, 110, 110);
   font-weight: 500;
   padding: 12px 30px;
@@ -97,7 +102,7 @@ const ListTitleTop = styled.p`
   }
 `;
 //---------------------------------------------
-const ButtonList = styled.button<AllProps>`
+const ButtonList = styled.button<Color_BgColorProps>`
   font-size: 19px;
   font-family: "Poppins";
   text-align: center;
@@ -119,7 +124,7 @@ const ButtonList = styled.button<AllProps>`
   }
 `;
 //---------------------------------------------
-const ButtonRequest = styled.button<AllProps>`
+const ButtonRequest = styled.button<BorderProps>`
   font-size: 19px;
   font-family: "Poppins";
   text-align: center;
@@ -145,7 +150,7 @@ const NewRoomButtonContainer = styled.div`
   display: flex;
 `;
 //---------------------------------------------
-const NewRoomButton = styled.button<AllProps>`
+const NewRoomButton = styled.button<BgColorProps>`
   width: 427px;
   height: 49px;
   border-radius: 12px;
@@ -154,7 +159,6 @@ const NewRoomButton = styled.button<AllProps>`
   font-weight: 600;
   line-height: 25px;
   background-color: ${(props) => props.bgcolor};
-  color: ${(props) => props.color};
   font-family: "Poppins";
   padding: 13px 23px;
   border: none;

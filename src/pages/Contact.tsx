@@ -2,7 +2,6 @@ import React from "react";
 import { ContactList } from "../data/ContactList";
 import CardContact from "../components/CardContact";
 import Button from "../components/Button";
-import { Guest } from "../Interfaces/ContactInterface";
 import {
   ContactCardsContainer,
   TableContainer,
@@ -36,8 +35,15 @@ const Contact: React.FC = () => {
             <ListTitleTop>Publised</ListTitleTop>
             <ListTitleTop>Archive</ListTitleTop>
           </ListTitleTopContainer>
-          <NewRoomButtonContainer right={"40px"}>
-            <NewRoomButton color={"#135846"} bgcolor={"#ffffff"}>Newest</NewRoomButton>
+          <NewRoomButtonContainer
+            style={{
+              right: "40px"
+            }}>
+            <NewRoomButton
+              color={"#135846"}
+              bgcolor={"#ffffff"}>
+              Newest
+            </NewRoomButton>
           </NewRoomButtonContainer>
         </HeaderContainer>
         <Table>
@@ -51,13 +57,12 @@ const Contact: React.FC = () => {
             </RowHeader>
           </thead>
           <tbody>
-            {ContactList.map((guest: Guest) => (
+            {ContactList.map((guest) => (
               <TableRow key={guest.id}>
                 <ImgContainer>
                   <TableData
                     width={"0px"}
                     height={"180px"}
-                    padding={"25px"}
                   ></TableData>
                   <Paragraph>{guest.id}</Paragraph>
                 </ImgContainer>
@@ -71,7 +76,8 @@ const Contact: React.FC = () => {
                   <Paragraph>{guest.comment}</Paragraph>
                 </TableData>
                 <TableData>
-                  <Button data-testid="button" color={"red"} bgcolor={"#E8FFEE"}>
+                  <Button data-testid="button"
+                    color={"#ff0101"}>
                     {guest.action}
                   </Button>
                 </TableData>

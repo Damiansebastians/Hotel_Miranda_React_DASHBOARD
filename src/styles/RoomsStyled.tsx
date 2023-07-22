@@ -1,6 +1,11 @@
 import styled from "styled-components";
-import { AllProps, BgColorProps } from "../Interfaces/StyledInterface";
+import { BgColorProps, Color_BgColorProps } from "../Interfaces/StyledInterface";
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 
+export interface ListTitleTopProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> {
+  selected?: boolean;
+}
     const TableContainer = styled.div`
     border-collapse: collapse;
     display: flex;
@@ -106,7 +111,7 @@ import { AllProps, BgColorProps } from "../Interfaces/StyledInterface";
     margin-bottom: 50px;
     `;
 
-    const ListTitleTop = styled.p<AllProps>`
+    const ListTitleTop = styled.p<ListTitleTopProps>`
     color: ${(props) => props.color ? "#135846" : "rgb(110, 110, 110)"};
     font-weight: ${(props) => (props.color ? "bold" : "500")};
     padding: 12px 30px;
@@ -125,7 +130,7 @@ import { AllProps, BgColorProps } from "../Interfaces/StyledInterface";
     display: flex;
     `;
     
-    const NewRoomButton = styled.button<BgColorProps>`
+    const NewRoomButton = styled.button<Color_BgColorProps>`
     width: 170px;
     height: 49px;
     border-radius: 12px;

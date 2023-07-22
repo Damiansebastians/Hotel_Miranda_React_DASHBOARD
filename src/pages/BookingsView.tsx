@@ -5,7 +5,6 @@ import { BsChatText } from "react-icons/bs";
 import { BiBed } from "react-icons/bi";
 import { MdSecurity } from "react-icons/md";
 import { AiOutlineWifi } from "react-icons/ai";
-import { useParams } from "react-router-dom";
 import { getSingleBooking } from "../store/slices/bookingSlice";
 import {
   BookingsDetailsContainer,
@@ -32,18 +31,22 @@ import {
   ImageRightContainer,
   CheckinDataContainer,
 } from "../styles/BookingsStyled";
+import { useParams } from 'react-router';
 
 const BookingsView = () => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
+
+  const bookingId = Number(id);
 
   const bookingSingleStore = useAppSelector(
     (state) => state.bookingsSlice.singleBooking
   );
 
   useEffect(() => {
-    dispatch(getSingleBooking(Number(id)));
-  }, []);
+    console.log("Fetching single booking with id:", bookingId);
+    dispatch(getSingleBooking(bookingId));
+  }, [dispatch, bookingId]); 
 
   return (
     <>
