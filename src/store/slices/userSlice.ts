@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { UsersList } from "../../data/UsersList";
-import { delaySlice } from "./delaySlice";
 import { RootState } from "../Store";
 import { User } from "../../Interfaces/UserInterface";
+import { apiCall } from "../../api/apiConnection";
 
 interface UsersState {
   list: User[];
@@ -10,7 +9,7 @@ interface UsersState {
   error?: string;
   singleUser: User | null;
 }
-const users = UsersList;
+// const users = UsersList;
 
 const initialState: UsersState = {
   list: [],
@@ -22,33 +21,40 @@ const initialState: UsersState = {
 export const fetchAllUsers = createAsyncThunk(
   "users/delaySlice",
   async () => {
-    return await delaySlice(users) as User[];
+    const response = await apiCall("users", "GET");
+    return response;
   }
 );
 
 export const getSingleUser = createAsyncThunk(
-  "users/getSinlgeUser",
+  "users/getSingleUser",
   async (id: number) => {
-    return id;
+    const response = await apiCall(`users/${id}`, "GET");
+    return response;
   }
 );
+
 export const deleteUser = createAsyncThunk(
   "users/deleteUser",
   async (id: number) => {
+    await apiCall(`users/${id}`, "DELETE");
     return id;
   }
 );
+
 export const addUser = createAsyncThunk(
   "users/addUser",
   async (newUser: User) => {
-    return newUser;
+    const response = await apiCall("users", "POST", newUser);
+    return response;
   }
 );
 
 export const editUser = createAsyncThunk(
   "users/editUser",
   async (user: User) => {
-    return user;
+    const response = await apiCall(`users/${user.id}`, "PUT", user);
+    return response;
   }
 );
 
@@ -59,38 +65,32 @@ export const usersSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(fetchAllUsers.pending, (state) => {
-        console.log("loading");
         state.status = "loading";
       })
       .addCase(fetchAllUsers.fulfilled, (state, action) => {
-        console.log("load complete");
         state.status = "succeeded";
         state.list = action.payload;
       })
-
       .addCase(fetchAllUsers.rejected, (state, action) => {
-        console.log("Failure while fetching data!");
         state.status = "failed";
         state.error = action.error.message;
       })
-
       .addCase(getSingleUser.fulfilled, (state, action) => {
-        state.singleUser = state.list.find(
-          (user) => user.id === action.payload) || null;
+        state.singleUser = action.payload;
       })
-
-    builder.addCase(deleteUser.fulfilled, (state, action) => {
-      state.list = state.list.filter((user) => user.id !== action.payload);
-      console.log(action.payload);
-    });
-    builder.addCase(addUser.fulfilled, (state, action) => {
-      state.list = [...state.list, action.payload];
-    });
-    builder.addCase(editUser.fulfilled, (state, action) => {
-      state.list = state.list.map((user) =>
-        user.id === action.payload.id ? action.payload : user
-      );
-    });
+      .addCase(deleteUser.fulfilled, (state, action) => {
+        state.list = state.list.filter((user) => user.id !== action.payload);
+      })
+      .addCase(addUser.fulfilled, (state, action) => {
+        state.list.push(action.payload);
+      })
+      .addCase(editUser.fulfilled, (state, action) => {
+        const editedUser = action.payload;
+        const index = state.list.findIndex((user) => user.id === editedUser.id);
+        if (index !== -1) {
+          state.list[index] = editedUser;
+        }
+      });
   },
 });
 

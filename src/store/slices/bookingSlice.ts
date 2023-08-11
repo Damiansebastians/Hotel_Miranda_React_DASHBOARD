@@ -5,7 +5,7 @@ import { Booking } from "../../Interfaces/BookingInterface";
 import { RootState } from "../Store";
 
 
-interface BookingsState{
+interface BookingsState {
   list: Booking[];
   singleBooking: Booking | null;
   status: 'loading' | 'succeeded' | 'failed' | null;
@@ -27,13 +27,21 @@ export const fetchAllBookings = createAsyncThunk(
     return await delaySlice(bookings) as Booking[];
   }
 );
+
+//--------------------------------------------------------------------------------
 export const getSingleBooking = createAsyncThunk(
-  "bookings/getSinlgeBooking",
+  "bookings/getSingleBooking",
   async (id: number) => {
-    const fetchSingleBooking = bookings.find(booking => booking.id === id);
-    return await delaySlice(fetchSingleBooking) as Booking;
+    try {
+      const apiRequest = await fetch(`${process.env.REACT_APP_URL}/bookings/${id}`);
+      const data = await apiRequest.json();
+      return data;
+    } catch (error: any) {
+      throw new Error("Error fetching booking: " + error.message);
+    }
   }
 );
+
 export const deleteBooking = createAsyncThunk(
   "bookings/deleteBooking",
   async (id: number) => {
@@ -74,7 +82,7 @@ export const bookingsSlice = createSlice({
         state.status = "failed";
         state.error = action.error.message;
       });
-      
+
     builder.addCase(getSingleBooking.fulfilled, (state, action) => {
       state.status = "succeeded";
       state.singleBooking = action.payload;
