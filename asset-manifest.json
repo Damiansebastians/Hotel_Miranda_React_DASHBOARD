@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Damiansebastians/Hotel_Miranda_React_DASHBOARD/static/css/main.073c9b0a.css",
+    "main.js": "/Damiansebastians/Hotel_Miranda_React_DASHBOARD/static/js/main.e1bc1f1f.js",
+    "static/js/787.42fd7b3a.chunk.js": "/Damiansebastians/Hotel_Miranda_React_DASHBOARD/static/js/787.42fd7b3a.chunk.js",
+    "static/media/perfil.jpg": "/Damiansebastians/Hotel_Miranda_React_DASHBOARD/static/media/perfil.84fe7f6cdc64e4465a26.jpg",
+    "index.html": "/Damiansebastians/Hotel_Miranda_React_DASHBOARD/index.html",
+    "main.073c9b0a.css.map": "/Damiansebastians/Hotel_Miranda_React_DASHBOARD/static/css/main.073c9b0a.css.map",
+    "main.e1bc1f1f.js.map": "/Damiansebastians/Hotel_Miranda_React_DASHBOARD/static/js/main.e1bc1f1f.js.map",
+    "787.42fd7b3a.chunk.js.map": "/Damiansebastians/Hotel_Miranda_React_DASHBOARD/static/js/787.42fd7b3a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.e1bc1f1f.js"
+  ]
+}
