@@ -1,3 +1,8 @@
+
+# Dashboard para el Hotel Miranda
+Aplicación de backoffice para el Hotel Miranda, que permite a sus empleados gestionar reservas, mensajes de los huéspedes, agregar nuevos usuarios y mucho más.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
