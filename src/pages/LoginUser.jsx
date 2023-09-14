@@ -103,7 +103,7 @@ const InfoForm = styled.p`
   width: 80%;
   margin-top: -20px;
   font-family: "Helvetica", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: #000000;
   text-transform: none;
 `;
