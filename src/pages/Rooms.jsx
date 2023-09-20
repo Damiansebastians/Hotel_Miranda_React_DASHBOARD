@@ -22,7 +22,7 @@ import { deleteRoom, fetchAllRooms  } from "../store/slices/roomsSlice";
 
     const Rooms = () => {
     const dispatch = useDispatch();
-    const { list, status } = useSelector((state) => state.roomSlice);
+    const { list } = useSelector((state) => state.roomSlice);
     const rooms = list;
     const [filter, setFilter] = useState("all");
 

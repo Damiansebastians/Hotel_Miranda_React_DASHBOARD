@@ -43,7 +43,7 @@ const BookingsView = () => {
 
   useEffect(() => {
     dispatch(getSingleBooking(Number(id)));
-  }, []);
+  }, [dispatch, id]);
 
   return (
     <>

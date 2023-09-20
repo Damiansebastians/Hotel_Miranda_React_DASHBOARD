@@ -23,7 +23,7 @@ import {
 const Users = () => {
   const dispatch = useDispatch();
 
-  const { list, status } = useSelector((state) => state.usersSlice);
+  const { list } = useSelector((state) => state.usersSlice);
   const filUsers = list;
   const [filter, setFilter] = useState("all");
 
