@@ -1,6 +1,6 @@
 {
   "name": "dashboard_hotel_miranda",
-  "homepage": "https://damiansebastians.github.io/Hotel_Miranda_React_DASHBOARD/",
+  "homepage": "http://miranda.dashboard.s3-website.eu-west-3.amazonaws.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
