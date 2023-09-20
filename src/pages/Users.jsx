@@ -29,7 +29,7 @@ const Users = () => {
 
   useEffect(() => {
     dispatch(fetchAllUsers());
-  }, []);
+  }, [dispatch]);
 
   //FILTROS
   const filterUsers = () => {
